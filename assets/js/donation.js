@@ -158,10 +158,10 @@ const changeQuantityCart = (donation_id, type) => {
   
         default:
           let changeQuantity = cart[positionItemInCart].quantity - 1;
-          if (changeQuantity > 0) {
-            cart[positionItemInCart].quantity = changeQuantity;
-          } else {
+          if (changeQuantity <= 0) {
             cart.splice(positionItemInCart, 1);
+          } else {
+            cart[positionItemInCart].quantity = changeQuantity;
           }
           break;
       }
@@ -180,14 +180,31 @@ const changeQuantityCart = (donation_id, type) => {
     }
   }) */
   
-  const initApp = () => {
-    addDataToHTML();
-  
-    // get data cart from memory
-    if (localStorage.getItem('cart')) {
-      cart = JSON.parse(localStorage.getItem('cart'));
-      addCartToHTML();
-    }
-  }
+    const initApp = () => {
+        addDataToHTML();
+      
+        // get data cart from memory
+        if (localStorage.getItem('cart')) {
+          cart = JSON.parse(localStorage.getItem('cart'));
+          addCartToHTML();
+        } else {
+          cart = [];
+        }
+      }
 
 initApp();
+
+const checkoutButton = document.querySelector('.checkOut');
+
+checkoutButton.addEventListener('click', () => {
+  // Clear the cart
+  cart = [];
+  addCartToMemory();
+  addCartToHTML();
+  // Change the color of the checkout button to green
+  checkoutButton.style.backgroundColor = 'green';
+  // Add a timeout to change the color back to normal after 2 seconds
+  setTimeout(() => {
+    checkoutButton.style.backgroundColor = '';
+  }, 2000);
+});
