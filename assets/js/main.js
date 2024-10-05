@@ -98,7 +98,15 @@ const scrollActive = () =>{
 }
 window.addEventListener('scroll', scrollActive)
 
+const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
+if (sectionsClass) {
+  if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+    sectionsClass.classList.add('active-link')
+  }else{
+    sectionsClass.classList.remove('active-link')
+  }
+}
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({

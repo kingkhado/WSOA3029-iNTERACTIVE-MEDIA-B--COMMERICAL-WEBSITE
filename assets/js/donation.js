@@ -129,9 +129,12 @@ const addCartToMemory = () => {
           `;
         }
       })
-    }
-    iconCartSpan.innerText = totalQuantity;
+   
+} else {
+    listCartHTML.innerHTML = '<p>Cart is empty</p>';
   }
+  iconCartSpan.innerText = totalQuantity;
+}
 
 
 
@@ -148,7 +151,7 @@ listCartHTML.addEventListener('click', (event) => {
 })
 
 const changeQuantityCart = (donation_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.id == donation_id); // Changed to id
+    let positionItemInCart = cart.findIndex((value) => value.id == donation_id);
     if (positionItemInCart >= 0) {
       let info = cart[positionItemInCart];
       switch (type) {
@@ -157,19 +160,22 @@ const changeQuantityCart = (donation_id, type) => {
           break;
   
         default:
-          let changeQuantity = cart[positionItemInCart].quantity - 1;
-          if (changeQuantity <= 0) {
+          if (cart[positionItemInCart].quantity === 1) {
             cart.splice(positionItemInCart, 1);
+            if (cart.length === 0) {
+              localStorage.removeItem('cart');
+            } else {
+              addCartToMemory();
+            }
           } else {
-            cart[positionItemInCart].quantity = changeQuantity;
+            cart[positionItemInCart].quantity = cart[positionItemInCart].quantity - 1;
+            addCartToMemory();
           }
           break;
       }
     }
-    addCartToMemory();
     addCartToHTML();
   }
-  
   
   /*
   listDonationHTML.addEventListener('click', (event) => {
