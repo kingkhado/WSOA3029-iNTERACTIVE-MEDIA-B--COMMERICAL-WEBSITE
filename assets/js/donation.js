@@ -3,7 +3,7 @@ const donations = [
       "id": 1,
       "name": "FREE BOOKS",
       "price": 0,
-      "image": "website images/book.png"
+      "image": "website images/Book.png"
     },
     {
       "id": 2,
