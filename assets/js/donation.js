@@ -27,7 +27,7 @@ const donations = [
       "id": 5,
       "name": "SHELTER FARE",
       "price": 100,
-      "image": "website images/SHELTER.jpg"
+      "image": "website images/SHELTERMAIN.png"
     }
   ];
 

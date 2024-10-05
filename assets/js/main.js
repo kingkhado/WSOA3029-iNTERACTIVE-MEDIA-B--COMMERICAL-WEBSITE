@@ -81,32 +81,31 @@ if (scrollUp) {
 const sections = document.querySelectorAll('section[id]')
     
 const scrollActive = () =>{
-  	const scrollDown = window.scrollY
+  const scrollDown = window.scrollY
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+sections.forEach(current =>{
+  const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.id,
+      sectionsClass = document.querySelector(`.nav__menu a[href*='${sectionId}']`)
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
+  if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+    if (sectionsClass) {
+      sectionsClass.classList.add('active-link')
+    } else {
+      console.log(`No element found with href*='${sectionId}'`);
+    }
+  }else{
+    if (sectionsClass) {
+      sectionsClass.classList.remove('active-link')
+    } else {
+      console.log(`No element found with href*='${sectionId}'`);
+    }
+  }                                                    
+})
 }
 window.addEventListener('scroll', scrollActive)
 
-const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-
-if (sectionsClass) {
-  if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-    sectionsClass.classList.add('active-link')
-  }else{
-    sectionsClass.classList.remove('active-link')
-  }
-}
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
