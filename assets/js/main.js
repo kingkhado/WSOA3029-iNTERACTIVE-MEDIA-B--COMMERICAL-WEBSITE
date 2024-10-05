@@ -7,7 +7,8 @@ const navItems = [
   { title: 'Home', href: 'index.html' },
   { title: 'Testimony', href: 'testimony.html' },
   { title: 'Donate', href: 'donation.html' },
-  { title: 'Data Visualisation', href: 'datavisualisation.html' },
+  { title: 'Node Visual', href: 'datavisualisation.html' },
+  { title: 'Graph Visual', href: 'datavisualisation2.html' },
   { title: 'Design', href: 'design.html' },
   { title: 'Theory', href: 'theory.html' }
 ];

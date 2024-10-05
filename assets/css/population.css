@@ -1,0 +1,89 @@
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+.bar {
+    fill: steelblue;
+}
+
+.homeless-bar {
+    fill: red;
+    opacity: 0.8;
+}
+
+.bar:hover, .homeless-bar:hover {
+    fill: orange;
+}
+
+.tooltip {
+    position: absolute;
+ 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.population {
+    background-color: steelblue;
+}
+
+.homeless {
+    background-color: red;
+}
+
+#legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
