@@ -5,7 +5,7 @@ const navToggle = document.getElementById('nav-toggle'),
 // Define the navigation bar items
 const navItems = [
   { title: 'Home', href: 'index.html' },
-  { title: 'Mission', href: 'mission.html' },
+  { title: 'Testimony', href: 'testimony.html' },
   { title: 'Donate', href: 'donation.html' },
   { title: 'Data Visualisation', href: 'datavisualisation.html' },
   { title: 'Design', href: 'design.html' },

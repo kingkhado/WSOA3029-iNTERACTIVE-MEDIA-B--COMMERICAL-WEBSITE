@@ -1043,10 +1043,19 @@ top: 50%;
 transform: translateY(-50%);
 transition: right 1.5s;
 }
-
-.carousel .list .item .introduce{
-opacity: 0;
-pointer-events: none;
+.carousel .list .item .introduce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background color to the text box */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .carousel .list .item:nth-child(2) .introduce{
 opacity: 1;
@@ -1057,32 +1066,35 @@ top: 50%;
 transform:  translateY(-50%);
 transition: opacity 0.5s;
 }
-.carousel .list .item .introduce .title{
-font-size: 2em;
-font-weight: 500;
-line-height: 1em;
-color: #fff;
+.carousel .list .item .introduce .title {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1em;
+  color: #fff;
+  margin-bottom: 10px;
 }
-.carousel .list .item .introduce .topic{
-font-size: 4em;
-font-weight: 500;
-color: #fff;
+.carousel .list .item .introduce .topic {
+  font-size: 4em;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
 }
-.carousel .list .item .introduce .des{
-font-size: small;
-color: #fff;
+.carousel .list .item .introduce .des {
+  font-size: small;
+  color: #fff;
+  margin-bottom: 20px;
 }
-.carousel .list .item .introduce .seeMore{
-font-family: Montserrat, sans-serif;
-margin-top: 1.2em;
-padding: 5px 0;
-border: none;
-border-bottom: 1px solid #cbc1c1;
-background-color: transparent;
-font-weight: bold;
-letter-spacing: 3px;
-transition: background 0.5s;
-color: #fff;
+.carousel .list .item .introduce .seeMore {
+  font-family: Montserrat, sans-serif;
+  margin-top: 1.2em;
+  padding: 5px 0;
+  border: none;
+  border-bottom: 1px solid #cbc1c1;
+  background-color: transparent;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition: background 0.5s;
+  color: #fff;
 }
 .carousel .list .item .introduce .seeMore:hover{
 background: #eee;
