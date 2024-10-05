@@ -66,8 +66,32 @@ header {
     font-family: Montserrat;
     color: #fff; /* Change the font color to white */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  }
+    opacity: 0; /* initial opacity: 0 */
+    transform: translateY(20px); /* initial translate: 20px down */
+    animation: fadeIn 1s forwards; /* add animation */
+    animation-delay: calc(0.5s + (0.2s * var(--index))); /* staggered delay */
+}
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* final translate: 0 */
+    }
+}
+
+.listDonation .item:nth-child(1) {
+    --index: 0;
+}
+
+.listDonation .item:nth-child(2) {
+    --index: 1;
+}
+
+.listDonation .item:nth-child(3) {
+    --index: 2;
+}
+
+/* and so on... */
 .listDonation .item h2 {
     font-weight: 500;
     font-size: large;

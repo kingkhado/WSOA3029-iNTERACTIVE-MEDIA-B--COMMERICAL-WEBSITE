@@ -149,8 +149,9 @@ const shopButtons = document.querySelectorAll('.redirect-to-donation');
 
 // Add event listener to each shop button
 shopButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Redirect to donation.html page
-        window.location.href = 'donation.html';
-    });
+  button.addEventListener('click', () => {
+    console.log('Button clicked');
+    // Redirect to donation.html page
+    window.location.href = 'donation.html';
+  });
 });
