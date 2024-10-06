@@ -3,87 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website</title>
-    <meta name="description" content="A responsive website focused on providing resources and support for homelessness. Learn more about our mission and how you can help.">
-    <meta name="keywords" content="homelessness, support, resources, community, charity">
-    <meta name="author" content="Makhado Khashane">
+    <title>Theory</title>
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/design.css">
+
 </head>
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container" role="navigation" aria-label="Main Navigation">
+        <nav class="nav container">
             <div class="nav__actions">
-                <div class="header-logo-text">
-                    <img src="website images/icon-homeless.png" alt="HHD Logo" loading="lazy">
-                </div>
+                <header>
+                    <div class="header-logo-text">
+                        <img src="website images/icon-homeless.png" alt="Logo">
+                    </div>
+                </header>
                 <!-- Toggle button -->
-                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-                  
-                    <span class="sr-only">Toggle navigation</span>
-                </button>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
             </div>
         </nav>
     </header>
     <!-- Close button -->
-    <div class="nav__close" id="nav-close" aria-label="Close navigation">
-      
+    <div class="nav__close" id="nav-close">
+        <i class="ri-close-line"></i>
     </div>
-  
     <!--==================== MAIN ====================-->
-<main class="main">
-    <!--==================== HOME ====================-->
-    <section class="home section" id="home" aria-labelledby="home-heading">
-        <h1 id="home-heading">Welcome to HHD: Support for the Homeless</h1>
-        <div class="home__container container grid">
-            <!-- Main content can go here -->
+    <main class="main">
+        <div class="container">
+            <div class="banner" id="theory">
+                <div class="content">
+                    <h1>
+                        HHD<br/>
+                        <div class="gradientText">
+                            <div class="job" data-job1="{THE THEORY}" data-job2="{THE CHANGE}"></div>
+                        </div>
+                    </h1>
+                    
+                    <div>
+                        <h2>Theory Section: Data Visualizations for Social Good</h2>
+                        <p class="description">
+                            This section delves into the rationale behind the design and implementation of two D3.js visualizations that embody the principles of compassion and generosity found in biblical teachings and community support initiatives. These visualizations—focusing on Bible verses related to giving to the poor and homeless shelter locations in South Africa—aim to blend technology with spirituality, fostering a deeper connection between users and these important themes.
+                        </p>
+                    
+                        <h3>Bible Verses Visualization Page</h3>
+                        
+                        <h4>Concept and Design</h4>
+                        <p class="description">
+                            The Bible Verses Visualization Page is built on the premise that scripture can offer guidance and inspiration in our interactions with others, particularly concerning generosity and compassion. By representing Bible verses through a dynamic D3.js visualization, this project transforms traditional scripture engagement into an interactive experience.
+                        </p>
+                        <p class="description">
+                            The design features nodes orbiting around a central point, where each node symbolizes a specific verse related to giving to the poor. This approach allows users to intuitively explore the relationships among verses, as verses from the same chapter are color-coded. This method not only enhances user engagement but also enables immediate visual comprehension of thematic connections.
+                        </p>
+                    
+                        <h4>Researching D3.js Nodes</h4>
+                        <p class="description">
+                            In preparation for implementing the node-based visualization, extensive research was conducted on different types of node structures in D3.js. Resources such as the D3.js official documentation and various tutorials helped clarify the best practices for creating interactive and aesthetically pleasing node visualizations. Notably, the use of force-directed graphs was considered to create an engaging user experience. For reference, see Mike Bostock's Force-Directed Graph on Observable.
+                        </p>
+                    
+                        <h4>User Interaction</h4>
+                        <p class="description">
+                            When users click on a node, they receive a pop-up displaying the corresponding Bible verse. This feature promotes an immersive experience, encouraging users to reflect on the significance of each verse. The design aligns with the mission of HHD, which seeks to inspire individuals to act on biblical teachings regarding charity and support for those in need.
+                        </p>
+                        <p class="description">
+                            The interactive nature of the visualization fosters a sense of community and shared purpose, encouraging users to engage with the scriptures actively. By blending technology and spirituality, this visualization creates an environment that invites users to contemplate the vital messages of compassion and charity found within the Bible.
+                        </p>
+                    
+                        <h4>Aesthetic Considerations</h4>
+                        <p class="description">
+                            The combination of color-coded verses and an orbiting node structure not only enhances the visual appeal but also creates an aesthetically pleasing design that captures users’ attention. This design strategy reflects the project's goal of creating an engaging and meaningful interaction with scripture, reinforcing the themes of generosity and support for the less fortunate.
+                        </p>
+                    
+                        <h3>Homeless Shelters Visualization Page</h3>
+                    
+                        <h4>Purpose and Functionality</h4>
+                        <p class="description">
+                            The Homeless Shelters Visualization Page serves as a critical tool for connecting individuals in need with resources. Utilizing a D3.js choropleth map, this page visually represents the locations of homeless shelters across South Africa, employing a clear color-coding system. Areas marked in red indicate shelter locations, allowing users to quickly identify where assistance is available.
+                        </p>
+                    
+                        <h4>Researching D3.js Maps</h4>
+                        <p class="description">
+                            To design the choropleth map, extensive research was conducted on various mapping techniques and resources available in D3.js. The D3.js map tutorial offers an excellent overview of creating choropleth maps, providing insights into color scaling, data binding, and interactivity.
+                        </p>
+                    
+                        <h4>Challenges with APIs in South Africa</h4>
+                        <p class="description">
+                            Finding APIs in South Africa proved to be somewhat challenging, as the availability and quality of data vary significantly. However, I persevered through these challenges, pivoting to alternative visualization methods such as bar charts and node-and-edge representations. This pivot allowed for maximizing tooltips and interactivity, ensuring that the visualizations remained engaging and informative. I explored several South African APIs, including resources like Data.gov.za and the South African Open Data Portal, which provided valuable datasets to enhance the accuracy of the project.
+                        </p>
+                    
+                        <h4>Information Accessibility</h4>
+                        <p class="description">
+                            Hovering over a shelter area reveals detailed information, including the shelter name, location, province, price per week, and relevant crime statistics. This transparency ensures that users have access to crucial information, empowering them to make informed decisions about seeking assistance. For instance, upon hovering over a specific area, users might see a notification like:
+                        </p>
+                        <ul class="description">
+                            <li><strong>SHELTER NAME:</strong> HHD</li>
+                            <li><strong>LOCATION:</strong> Johannesburg CBD</li>
+                            <li><strong>PROVINCE:</strong> Gauteng</li>
+                            <li><strong>PRICE PER WEEK:</strong> XXXX</li>
+                            <li><strong>CRIME STATS:</strong> XXXX</li>
+                        </ul>
+                        <p class="description">
+                            This approach not only enhances usability but also addresses the often-overlooked aspect of safety and costs associated with seeking shelter.
+                        </p>
+                    
+                        <h4>User-Centric Design Features</h4>
+                        <p class="description">
+                            To improve user experience, the map includes a zoom-in feature at the bottom. This functionality is especially valuable in densely populated areas, where multiple shelters might be located close to each other. By allowing users to zoom in, the map facilitates easy navigation and helps users find the most relevant resources quickly.
+                        </p>
+                    
+                        <h4>Alignment with Mission</h4>
+                        <p class="description">
+                            Overall, this choropleth map reinforces HHD's mission by providing critical information to individuals seeking assistance. It highlights available support in communities, promoting awareness of resources designed to aid those experiencing homelessness. The combination of data visualization and essential information serves as a powerful reminder of the importance of community support and assistance for the less fortunate.
+                        </p>
+                    
+                        <h3>Conclusion</h3>
+                        <p class="description">
+                            Both visualizations utilize cutting-edge technology and serve as platforms for promoting essential values such as compassion, generosity, and community support. By integrating scripture with practical resources, these visualizations create an engaging and meaningful experience, encouraging users to reflect on the teachings of charity and the importance of helping those in need. Through this innovative approach, HHD aims to inspire action and foster a sense of responsibility toward supporting the poor and marginalized in society.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="essay-container">
+                <h3>Critical Analysis of Data Visualization in _How the Virus Won_</h3>
+                <p>
+                    <a href="writtendocuments/Critical Analysis of Data Visualization in _How the Virus Won_ (1).pdf" target="_blank">Download or View Essay PDF</a>
+                </p>
+            </div>
+               
+            </div>
         </div>
-    </section>
-
-    <!--==================== ESSAY SECTION ====================-->
-    <section class="essay-section section" id="essay" aria-labelledby="essay-heading">
-        <h1 id="essay-heading">Essay Section</h1>
-        <div class="essay-container">
-            <!-- Theory Section -->
-            <div class="theory-section">
-                <h2>Theory Section</h2>
-                <!-- Add your essay content here -->
-                <p>Insert your essay content here...</p>
-            </div>
-
-            <!-- Button to preview and download the essay -->
-            <button id="preview-download-btn">Preview and Download</button>
-
-            <!-- Large containers for preparatory work/rationales -->
-            <div class="large-container">
-                <h2>Preparatory Work/Rationales</h2>
-                <!-- Add your preparatory work/rationales content here -->
-                <p>Insert your preparatory work/rationales content here...</p>
-            </div>
-
-            <!-- Independent research and reflections -->
-            <div class="large-container">
-                <h2>Independent Research and Reflections</h2>
-                <!-- Add your independent research and reflections content here -->
-                <p>Insert your independent research and reflections content here...</p>
-            </div>
-        </div>
-    </section>
-</main>
+    </main>
+    <!--==================== FOOTER ====================-->
+    <script src="assets/js/footer.js"></script>
     <!--========== SCROLL UP ==========-->
-    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-        <i class="ri-arrow-up-line" aria-hidden="true"></i>
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
     </a>
     <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
-    <!--=============== STATS JS ===============-->
-    <script defer src="assets/js/stats.js"></script>
-    <!--=============== FOOTER JS ===============-->
-    <script src="assets/js/footer.js"></script>
-</body>
-</html>
+ 

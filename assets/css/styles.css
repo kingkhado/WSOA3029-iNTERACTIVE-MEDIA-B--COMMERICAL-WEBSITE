@@ -1410,25 +1410,23 @@ filter: blur(130px);
 }
 
 
-.essay-container {
-  /* Add animation styles here */
-  transition: opacity 0.5s;
+
+
+ /* Styles for the essay container */
+ .essay-container {
+  background-color: #001f3f; /* Dark blue background */
+  color: white; /* White text */
+  padding: 20px; /* Padding inside the container */
+  margin: 20px auto; /* Centering the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Maximum width for larger screens */
+  font-family: 'Arial', sans-serif; /* Font style */
+  line-height: 1.6; /* Line height for readability */
 }
 
-.essay-container.visible {
-  opacity: 1;
-}
 
-.essay-container:not(.visible) {
-  opacity: 0;
-}
 
-.large-container {
-  /* Add styles for large containers here */
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 
