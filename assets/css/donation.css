@@ -4,7 +4,7 @@
 
 
 
-.container {
+.donation-container{
     width: 900px;
     margin: auto;
     max-width: 90vw;
@@ -18,15 +18,15 @@ svg {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.icon-cart {
     position: relative;
-}
+  }
+  
+  .icon-cart {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
 
 .icon-cart span {
     position: absolute;

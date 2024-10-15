@@ -16,26 +16,11 @@ a {
     text-decoration: none;
 }
 
-header .logo img {
-    height: 50px;
-}
 
-header ul {
-    margin: 0;
-    list-style: none;
-    display: flex;
-    height: 100%;
-    justify-content: end;
-    align-items: center;
-}
-
-header ul li {
-    padding: 0 30px;
-}
 
 .container {
     width: 1200px;
-    max-width: 90%;
+   
     margin: auto;
 }
 
@@ -113,9 +98,7 @@ header ul li {
     width: 90%;
 }
 
-header input {
-    display: none;
-}
+
 
 .title {
     text-align: center;

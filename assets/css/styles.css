@@ -40,6 +40,13 @@
   --z-fixed: 100;
 }
 
+h2 {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+p {
+  margin-top: 10px; /* Optional: Add some space above paragraphs if needed */
+}
+
 .header-logo-text {
   display: flex;
   align-items: center;
@@ -163,6 +170,8 @@ img {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
+
+
 
 .grid {
   display: grid;
@@ -541,6 +550,8 @@ img {
 /*=============== FOOTER ===============*/
 .footer {
   padding-block: 4rem 2rem;
+  grid-row: 2;
+  border-top: 1px solid white; /* Adds a white line at the top */
 }
 
 .footer__container {
