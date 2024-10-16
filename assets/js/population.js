@@ -46,9 +46,11 @@ function createInteractiveBarChart(provinces, homelessPopulation) {
        .attr('transform', `translate(0, ${height})`)
        .call(d3.axisBottom(x).ticks(6));
 
-    // Add the Y-axis
-    svg.append('g')
-       .call(d3.axisLeft(y));
+ // Add the Y-axis with a class
+svg.append('g')
+   .attr('class', 'y axis')  // Assign the class here
+   .call(d3.axisLeft(y));  // Create the Y-axis
+
 
     // Tooltips
     const tooltip = d3.select('body')
@@ -100,38 +102,136 @@ function createInteractiveBarChart(provinces, homelessPopulation) {
         homelessBars.attr('display', isHidden ? null : 'none');
     });
 
-    // Sort by population
-    d3.select('#sort-population').on('click', () => {
-        provinces.sort((a, b) => b.population - a.population);
-        y.domain(provinces.map(d => d.name));
-        svg.selectAll('.bar')
-           .transition()
-           .duration(1000)
-           .attr('y', d => y(d.name));
-        svg.selectAll('.homeless-bar')
-           .transition()
-           .duration(1000)
-           .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
-        svg.select('.y.axis')
-           .transition()
-           .duration(1000)
-           .call(d3.axisLeft(y));
-    });
+ // Sort by population (ascending)
+d3.select('#sort-population-asc').on('click', () => {
+    provinces.sort((a, b) => a.population - b.population);  // Sort ascending
+    y.domain(provinces.map(d => d.name));
+    
+    svg.selectAll('.bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name));
 
-    // Reset chart
-    d3.select('#reset-chart').on('click', () => {
-        y.domain(provinces.map(d => d.name));
-        svg.selectAll('.bar')
-           .transition()
-           .duration(1000)
-           .attr('y', d => y(d.name));
-        svg.selectAll('.homeless-bar')
-           .transition()
-           .duration(1000)
-           .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
-        svg.select('.y.axis')
-           .transition()
-           .duration(1000)
-           .call(d3.axisLeft(y));
-    });
+    svg.selectAll('.homeless-bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
+
+    // Update Y-axis
+    svg.select('.y.axis')  // Update the Y-axis labels
+       .transition()
+       .duration(1000)
+       .call(d3.axisLeft(y));
+});
+
+// Sort by population (descending)
+d3.select('#sort-population-desc').on('click', () => {
+    provinces.sort((a, b) => b.population - a.population);  // Sort descending
+    y.domain(provinces.map(d => d.name));
+
+    svg.selectAll('.bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name));
+
+    svg.selectAll('.homeless-bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
+
+    // Update Y-axis
+    svg.select('.y.axis')  // Update the Y-axis labels
+       .transition()
+       .duration(1000)
+       .call(d3.axisLeft(y));
+});
+
+// Reset chart
+d3.select('#reset-chart').on('click', () => {
+    provinces.sort((a, b) => a.name.localeCompare(b.name)); // Reset to original order
+    y.domain(provinces.map(d => d.name));
+
+    svg.selectAll('.bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name));
+
+    svg.selectAll('.homeless-bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
+
+    // Update Y-axis
+    svg.select('.y.axis')  // Update the Y-axis labels
+       .transition()
+       .duration(1000)
+       .call(d3.axisLeft(y));
+});// Sort by population (ascending)
+d3.select('#sort-population-asc').on('click', () => {
+    provinces.sort((a, b) => a.population - b.population);  // Sort ascending
+    y.domain(provinces.map(d => d.name));
+    
+    // Update the position of the bars
+    svg.selectAll('.bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name));
+
+    svg.selectAll('.homeless-bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
+
+    // Update the Y-axis labels
+    svg.select('.y.axis')  // Select the Y-axis element
+       .transition()
+       .duration(1000)
+       .call(d3.axisLeft(y));  // Re-draw the Y-axis with the updated scale
+});
+
+// Sort by population (descending)
+d3.select('#sort-population-desc').on('click', () => {
+    provinces.sort((a, b) => b.population - a.population);  // Sort descending
+    y.domain(provinces.map(d => d.name));
+
+    // Update the position of the bars
+    svg.selectAll('.bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name));
+
+    svg.selectAll('.homeless-bar')
+       .transition()
+       .duration(1000)
+       .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
+
+    // Update the Y-axis labels
+    svg.select('.y.axis')  // Select the Y-axis element
+       .transition()
+       .duration(1000)
+       .call(d3.axisLeft(y));  // Re-draw the Y-axis with the updated scale
+});
+
+// Reset chart
+d3.select('#reset-chart').on('click', () => {
+   provinces.sort((a, b) => a.name.localeCompare(b.name)); // Reset to original order
+   y.domain(provinces.map(d => d.name));
+
+   svg.selectAll('.bar')
+      .transition()
+      .duration(1000)
+      .attr('y', d => y(d.name));
+
+   svg.selectAll('.homeless-bar')
+      .transition()
+      .duration(1000)
+      .attr('y', d => y(d.name) + (y.bandwidth() - 10) / 2);
+
+   // Update Y-axis
+   svg.select('.y.axis')  // Update the Y-axis labels
+      .transition()
+      .duration(1000)
+      .call(d3.axisLeft(y));
+});
+
 }
