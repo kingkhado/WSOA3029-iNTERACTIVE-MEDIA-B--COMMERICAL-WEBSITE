@@ -1,34 +1,41 @@
-h1 {
-    margin-bottom: 20px;
-    color: #333;
+/* Centering styles */
+.d3vziualization {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Allow it to grow with content */
+    padding-bottom: 50px; /* Add padding to prevent overlap with the footer */
 }
 
 #chart {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;  /* Limit the maximum width */
-    max-height: 100%; /* Limit the maximum height */
-    overflow: hidden; /* Prevent the chart from going beyond the container */
     margin-bottom: 20px;
+    width: 90%;  /* Set a width of 90% to utilize space */
+    max-width: 1200px; /* Limit max width to keep it responsive */
+    min-height: 500px;  /* Set a minimum height for the chart */
 }
 
+
 .controls {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 button {
-    padding: 15px 30px; /* Increased padding for larger buttons */
-    margin: 0 10px; /* More space between the buttons */
     background-color: #4CAF50;
-    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+    margin: 5px;
+    padding: 12px 24px; /* Slightly reduced button padding */
     transition: all 0.3s ease;
-    font-size: 16px;
 }
-
 
 button:hover {
     background-color: #45a049;
@@ -39,8 +46,27 @@ button:active {
     background-color: #3e8e41;
 }
 
+/* Make buttons responsive */
+@media (max-width: 1024px) {
+    button {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
 .bar {
     fill: steelblue;
+}
+
+.bar:hover, .homeless-bar:hover {
+    fill: orange;
 }
 
 .homeless-bar {
@@ -48,13 +74,10 @@ button:active {
     opacity: 0.8;
 }
 
-.bar:hover, .homeless-bar:hover {
-    fill: orange;
-}
+
 
 .tooltip {
     position: absolute;
- 
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -63,6 +86,32 @@ button:active {
     opacity: 0;
     transition: opacity 0.2s;
 }
+
+/* General responsive design */
+@media (max-width: 1440px) {
+    #chart {
+        max-width: 85%; /* Increase size slightly */
+    }
+}
+
+@media (max-width: 1280px) {
+    #chart {
+        max-width: 75%; /* Increase size slightly */
+    }
+}
+
+@media (max-width: 1024px) {
+    #chart {
+        max-width: 65%; /* Increase size slightly */
+    }
+}
+
+@media (max-width: 768px) {
+    #chart {
+        max-width: 95%; /* Increase size slightly */
+    }
+}
+
 
 .legend-box {
     display: inline-block;
@@ -82,7 +131,7 @@ button:active {
     display: flex;
     justify-content: center;
     gap: 20px; /* Add spacing between legend items */
-    margin-top: 10px;
+    margin-top: 20px; /* Add more margin for spacing from the chart */
     font-size: 14px;
 }
 
