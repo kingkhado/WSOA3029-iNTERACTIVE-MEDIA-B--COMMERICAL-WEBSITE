@@ -79,7 +79,10 @@ a {
 
 .banner .logo {
     position: relative;
-    height: max-content;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    height: max-content; /* Let the height adapt to the content */
     text-align: center;
 }
 
@@ -94,8 +97,10 @@ a {
     box-shadow: var(--box-shadow);
 }
 
-.banner img {
-    width: 90%;
+.banner .logo img {
+    width: 90%; /* Adjust image size to fit the container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block;
 }
 
 
