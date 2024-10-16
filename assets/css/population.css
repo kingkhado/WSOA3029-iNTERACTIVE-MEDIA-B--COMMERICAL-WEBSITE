@@ -7,6 +7,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;  /* Limit the maximum width */
+    max-height: 100%; /* Limit the maximum height */
+    overflow: hidden; /* Prevent the chart from going beyond the container */
     margin-bottom: 20px;
 }
 

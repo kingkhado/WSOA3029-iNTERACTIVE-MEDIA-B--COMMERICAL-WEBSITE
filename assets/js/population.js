@@ -18,16 +18,16 @@ fetch('https://apps.itos.uga.edu/CODV2API/api/v1/themes/cod-ps/lookup/Get/1/do/Z
   .catch(error => console.error('Error fetching the data:', error));
 
 function createInteractiveBarChart(provinces, homelessPopulation) {
-    const margin = {top: 20, right: 30, bottom: 40, left: 90},
-          width = 800 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
+   const margin = {top: 20, right: 30, bottom: 40, left: 90},
+   width = 800 - margin.left - margin.right,
+   height = 400 - margin.top - margin.bottom;
 
-    const svg = d3.select('#chart')
-                  .append('svg')
-                  .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-                  .attr('preserveAspectRatio', 'xMidYMid meet')
-                  .append('g')
-                  .attr('transform', `translate(${margin.left},${margin.top})`);
+const svg = d3.select('#chart')
+           .append('svg')
+           .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+           .attr('preserveAspectRatio', 'xMidYMid meet') // Make the SVG scale proportionally
+           .append('g')
+           .attr('transform', `translate(${margin.left},${margin.top})`);
 
     // X and Y scales
     const x = d3.scaleLinear()
