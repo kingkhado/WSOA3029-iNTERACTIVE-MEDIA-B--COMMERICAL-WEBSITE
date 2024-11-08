@@ -1,0 +1,70 @@
+/* General Layout */
+body {
+    background-color: #121212;
+    color: #F0F0F0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    background-color: #1C1C1C;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: #E0E0E0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Chart Container */
+#chart {
+    width: 80%;
+    max-width: 600px;
+    height: 500px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #E0E0E0;
+}
+
+.legend-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.hunger {
+    background-color: #F4B400; /* Yellow */
+}
+
+.homeless {
+    background-color: #1F77B4; /* Blue */
+}
+
+/* Footer */
+footer {
+    background-color: #1C1C1C;
+    padding: 10px;
+    color: #B0B0B0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

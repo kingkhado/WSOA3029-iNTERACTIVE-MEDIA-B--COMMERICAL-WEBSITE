@@ -1,0 +1,180 @@
+/* General Layout for D3 Visualization */
+.d3visualization {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    font-family: 'Roboto', Arial, sans-serif; /* Modern, clean font */
+}
+
+/* Chart Container */
+#chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 500px;
+    padding: 20px;
+    background-color: #1E1E1E; /* Dark background for charts */
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Button Styling */
+button {
+    background-color: #292929; /* Slightly lighter dark grey for buttons */
+    border: 1px solid #4A4A4A; /* Soft border to separate from background */
+    border-radius: 8px;
+    color: #E0E0E0;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    padding: 14px 28px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #444444; /* Darken on hover */
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #333333; /* Active state */
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 1024px) {
+    button {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    button {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+/* Pie Chart Styling */
+.pie-slice {
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.pie-slice:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    fill: #5C92DA; /* Brighten on hover */
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: rgba(30, 30, 30, 0.9); /* Slightly lighter dark grey */
+    color: #F0F0F0;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+}
+
+.tooltip.show {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+/* Legend Styling */
+.legend-box {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+
+.hunger {
+    background-color: #F4B400; /* Bright yellow for hunger stats */
+}
+
+.homeless {
+    background-color: #1F77B4; /* Calming blue for homeless stats */
+}
+
+#legend {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #D0D0D0;
+}
+
+#legend div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 1440px) {
+    #chart {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 1280px) {
+    #chart {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #chart {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    #chart {
+        max-width: 90%;
+    }
+}
+
+/* Overall Page Styling */
+body {
+    background-color: #121212; /* Dark background for the page */
+    color: #F0F0F0;
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+header {
+    background-color: #1C1C1C;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #444;
+}
+
+header .header-logo-text img {
+    max-width: 150px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1C1C1C;
+    color: #B0B0B0;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
