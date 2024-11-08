@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Explore a unique node-edge visualization of Bible verses focused on themes of charity and compassion. Discover connections and insights through interactive visuals.">
-        <meta name="keywords" content="Bible verses, node-edge visualization, interactive, charity, compassion, data visualization, responsive design">
-        <meta name="author" content="Makhado Khashane">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore interactive visualizations on Bible verses and homelessness data in South Africa. Understand connections in charity, compassion, and poverty-related issues.">
+    <meta name="keywords" content="Bible verses, node-edge visualization, homelessness, charity, compassion, data visualization, South Africa, responsive design">
+    <meta name="author" content="Makhado Khashane">
+    <title>Interactive Visualizations: Bible Verses and South Africa's Homelessness Data</title>
     
-        <title>Responsive Bible Verses Node-Edge Visualization</title>
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Interactive Bible Verses and Homelessness Data Visualizations">
+    <meta property="og:description" content="Explore Bible verses related to charity and compassion, and visualize homelessness data across South African provinces.">
+    <meta property="og:image" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/assets/images/bible-visualization-share.jpg">
+    <meta property="og:url" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/visualization-url">
+    <meta property="og:type" content="website">
     
-        <!-- Open Graph Meta Tags for Social Media Sharing -->
-        <meta property="og:title" content="Bible Verses Node-Edge Visualization">
-        <meta property="og:description" content="Dive into an interactive visualization of Bible verses on charity and compassion. Uncover meaningful connections in this responsive experience.">
-        <meta property="og:image" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/assets/images/bible-visualization-share.jpg">
-        <meta property="og:url" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/visualization-url">
-        <meta property="og:type" content="website">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/visualization-url">
     
-        <!-- Canonical URL -->
-        <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/visualization-url">
-    
-        <!--=============== REMIXICONS ===============-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/node-edge.css">
-    </head>
-    
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/node-edge.css">
+
+</head>
 <body>
     
     <!--==================== PROGRESS BAR ====================-->
@@ -52,23 +51,68 @@
     <div class="nav__close" id="nav-close">
         <i class="ri-close-line"></i>
     </div>
+
     <!--==================== MAIN ====================-->
     <main class="main">
-  <!--==================== HOME ====================-->
-     
-    <!-- visualization Section -->
-        <section class="d3vziualization section" id="vizual">
-        <div class="home__container container grid">
-            <h2>Node-Edge Visualization of DONATION Bible Verses</h2>
-            <p>Click on a node to view the corresponding Bible verse about giving. Observe how the verses are connected to emphasize the importance of helping the poor.</p>
-            <div id="graphContainer">
-                <svg id="graph" width="800" height="600"></svg>
-                <div class="tooltip" style="display: none;"></div>
+        
+   
+
+        <!--==================== BUBBLE CHART VISUALIZATION ====================-->
+        <section class="bubble-chart section">
+            <div class="container">
+                <h1>Homelessness and Poverty Data by Province in South Africa</h1>
+
+                <!-- Search and Filter Controls -->
+                <div class="filter-search">
+                    <input type="text" id="search-input" placeholder="Search Province...">
+                    <select id="filter-select">
+                        <option value="all">All Provinces</option>
+                        <option value="high-population">High Total Population</option>
+                        <option value="high-homeless">High Homeless Population</option>
+                    </select>
+                    <button id="reset-filters">Reset Filters</button> <!-- Reset Button -->
+                </div>
+
+                <!-- Chart Container -->
+                <div id="chart"></div>
+
+                <!-- Buttons for Toggling -->
+                <div class="buttons">
+                    <button id="toggle-homeless">Show Homeless Population</button>
+                    <button id="reset-chart">Show Total Population</button>
+                </div>
+
+                <!-- Additional Information Section -->
+                <div id="extra-info">
+                    <h2>Additional Poverty Information</h2>
+                    <p>
+                        Around 23% of South African children are affected by food poverty, lacking access to sufficient nutrition. Furthermore, poverty and homelessness remain serious issues in South Africa, impacting a significant portion of the population, particularly in urban areas.
+                    </p>
+                    <p>
+                        This visualization shows the distribution of both total and homeless populations across provinces. Hover over the bubbles for detailed information on each province, including the child poverty rate.
+                    </p>
+                </div>
+
+                <!-- Drill-Down Information Display -->
+                <div id="detailed-info" style="display: none;">
+                    <h2>Province Details</h2>
+                    <p id="province-details"></p>
+                </div>
             </div>
-        </div>
         </section>
 
-        
+             <!--==================== NODE-EDGE VISUALIZATION ====================-->
+             <section class="d3vziualization section" id="vizual">
+                <div class="home__container container grid">
+                    <h2>Node-Edge Visualization of DONATION Bible Verses</h2>
+                    <p>Click on a node to view the corresponding Bible verse about giving. Observe how the verses are connected to emphasize the importance of helping the poor.</p>
+                    <div id="graphContainer">
+                        <svg id="graph" width="800" height="600"></svg>
+                        <div class="tooltip" style="display: none;"></div>
+                    </div>
+                </div>
+            </section>
+
     </main>
     
     <!--==================== FOOTER ====================-->
@@ -84,9 +128,9 @@
     <!--=============== STATS JS ===============-->
     <script defer src="assets/js/stats.js"></script>
 
-       <!--=============== VISUALIZATIONS JS ===============-->
+    <!--=============== VISUALIZATIONS JS ===============-->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="assets/js/bibleversevisual.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1461,92 +1461,217 @@ filter: blur(130px);
   line-height: 1.6; /* Line height for readability */
 }
 
-
-
-
-
-
+/* Global Styles */
 body {
-   
-    margin: 0;
-    padding: 20px;
-    background-color: #18181d;
+  margin: 0;
+  padding: 20px;
+  background-color: #18181d; /* Dark background for the entire page */
+  color: #3257a8;
+}
+
+/* Main Section */
+.main {
+  margin-top: 20px; /* Reduced space between header and main content */
+}
+
+/*==================== NODE-EDGE VISUALIZATION ====================*/
+.d3vziualization {
+  margin-bottom: 0; /* No space below the node-edge visualization */
+}
+
+#vizual h2 {
+  margin-bottom: 10px;
+}
+
+#vizual p {
+  margin-bottom: 15px; /* Reduced space between paragraphs */
+}
+
+/*==================== BUBBLE CHART VISUALIZATION ====================*/
+.bubble-chart {
+  margin-top: 0; /* No space from previous sections */
+  width: 70%; /* Make the bubble chart smaller */
+  margin: 0 auto; /* Center the bubble chart */
+}
+
+.bubble-chart h1 {
+  text-align: center;
+  margin-bottom: 10px; /* Reduced space below the title */
+}
+
+.filter-search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px; /* Reduced space below the filter search */
+  justify-content: center;
+}
+
+#search-input, #filter-select {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+}
+
+#reset-filters {
+  padding: 8px;
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+#reset-filters:hover {
+  background-color: #555;
+}
+
+#chart {
+  margin: 10px 0; /* Reduced margin around the chart */
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Bubble Styles with Glow */
+.bubble {
+  padding: 12px; /* White padding around the bubbles */
+  background-color: #fff; /* White background for bubbles */
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); /* Stronger glow effect around bubbles */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.bubble:hover {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 1); /* More pronounced glow on hover */
+}
+
+/* Buttons Section */
+.buttons {
+  margin-top: 10px; /* Reduced space above buttons */
+  text-align: center;
+}
+
+#toggle-homeless, #reset-chart {
+  padding: 10px 20px;
+  border: 1px solid #444;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+}
+
+#toggle-homeless:hover, #reset-chart:hover {
+  background-color: #555;
+}
+
+/* Info Sections */
+#extra-info, #detailed-info {
+  background-color: #2d2d34;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px; /* Reduced margin between info sections */
+}
+
+#extra-info h2, #detailed-info h2 {
+  color: #ffffff;
+}
+
+#extra-info p {
+  margin-bottom: 10px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.tooltip.hidden {
+  opacity: 0;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 10px;
+  background-color: #2d2d34;
+  color: #fff;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Graph and Visualization Container */
+#graphContainer {
+  margin: 20px 0; /* Reduced space above the chart */
+  width: 100%;
+  display: block;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Node and Link Styles */
+.node {
+  stroke: #999;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #ccc;
+  stroke-opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .filter-search {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  h1 {
-    text-align: center;
-    color: #ffffff;
-  }
-  
-  #graphContainer {
-    justify-self: center; /* Explicitly center the graph container */
-    margin: 20px auto;
-    width: 90%;  /* Adjusted for better responsiveness */
-    display: block;  /* Add this line */
-  }
-  
-  svg {
-    width: 100%;  /* Make SVG responsive */
-    height: auto;  /* Adjust height to maintain aspect ratio */
-    margin: 0 auto;  /* Add this line */
-  }
-  
-  .node {
-    stroke: #999;
-    stroke-width: 1.5px;
-  }
-  
-  .link {
-    stroke: #ccc;
-    stroke-opacity: 0.6;
-  }
-  
-  .tooltip {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-    font-size: 14px;
-    transition: opacity 0.3s; /* Add a fade effect */
-  }
-  
-  .tooltip.hidden {
-    opacity: 0; /* Use class to hide tooltip */
-  }
-  .modal {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
+
+  #search-input, #filter-select {
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
   }
-  
-  .modal-content {
- 
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius: 10px;
+
+  .buttons {
+    text-align: center;
   }
-  
-  .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close-button:hover,
-  .close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+}

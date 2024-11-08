@@ -3,112 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Africa Choropleth Map</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .tooltip { 
-            position: absolute;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            border-radius: 4px;
-            display: none;
-        }
-        .loading { 
-            position: absolute;
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            font-size: 20px; 
-        }
-        .dropdown { 
-            margin: 10px;
-            padding: 5px;
-            font-size: 16px;
-        }
-        #chart { width: 100%; height: 600px; }
-    </style>
+    <title>Bubble Chart for Homelessness and Poverty in South Africa</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Homelessness and Poverty Data by Province in South Africa</h1>
 
-    <div id="chart"></div>
-    <div class="loading" id="loading-message">Loading Data...</div>
+        <!-- Search and Filter Controls -->
+        <div class="filter-search">
+            <input type="text" id="search-input" placeholder="Search Province...">
+            <select id="filter-select">
+                <option value="all">All Provinces</option>
+                <option value="high-population">High Total Population</option>
+                <option value="high-homeless">High Homeless Population</option>
+            </select>
+            <button id="reset-filters">Reset Filters</button> <!-- Reset Button -->
+        </div>
 
-    <select id="filter" class="dropdown">
-        <option value="population">Population</option>
-        <option value="homelessness">Homelessness Rate</option>
-    </select>
+        <!-- Chart Container -->
+        <div id="chart"></div>
 
-    <input type="text" id="search" placeholder="Search for a Province" class="dropdown">
+        <!-- Buttons for Toggling -->
+        <div class="buttons">
+            <button id="toggle-homeless">Show Homeless Population</button>
+            <button id="reset-chart">Show Total Population</button>
+        </div>
 
-    <div class="tooltip" id="tooltip"></div>
+        <!-- Additional Information Section -->
+        <div id="extra-info">
+            <h2>Additional Poverty Information</h2>
+            <p>
+                Around 23% of South African children are affected by food poverty, lacking access to sufficient nutrition. Furthermore, poverty and homelessness remain serious issues in South Africa, impacting a significant portion of the population, particularly in urban areas.
+            </p>
+            <p>
+                This visualization shows the distribution of both total and homeless populations across provinces. Hover over the bubbles for detailed information on each province, including the child poverty rate.
+            </p>
+        </div>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script>
-        // Set up the SVG container
-        const width = 960, height = 600;
-        const projection = d3.geoMercator().center([24, -30]).scale(700);
-        const path = d3.geoPath().projection(projection);
-        const svg = d3.select("#chart").append("svg").attr("width", width).attr("height", height);
+        <!-- Drill-Down Information Display -->
+        <div id="detailed-info" style="display: none;">
+            <h2>Province Details</h2>
+            <p id="province-details"></p>
+        </div>
+    </div>
 
-        // Load geoJSON and API data
-        Promise.all([
-            d3.json("path_to_south_africa_geojson_file.json"),
-            d3.json("https://apps.itos.uga.edu/CODV2API/api/v1/themes/cod-ps/lookup/Get/1/do/ZAF")
-        ]).then(([geoData, apiData]) => {
-            document.getElementById("loading-message").style.display = "none"; // Hide loading message
-
-            // Prepare data by matching provinces
-            geoData.features.forEach((feature) => {
-                const province = apiData.find(p => p.province_name === feature.properties.name);
-                if (province) {
-                    feature.properties.data = province.data; // Add the data to each province
-                }
-            });
-
-            // Draw the map with provinces color-coded based on population or homelessness
-            const colorScale = d3.scaleQuantize().domain([0, 100]).range(d3.schemeBlues[9]);
-
-            svg.selectAll("path")
-                .data(geoData.features)
-                .enter().append("path")
-                .attr("d", path)
-                .attr("fill", d => colorScale(d.properties.data.population || 0)) // Use population data as default
-                .on("mouseover", function(event, d) {
-                    d3.select(this).attr("stroke", "black").attr("stroke-width", 2);
-                    d3.select("#tooltip").style("display", "block")
-                        .html(`Province: ${d.properties.name}<br>Population: ${d.properties.data.population}`)
-                        .style("left", `${event.pageX + 5}px`)
-                        .style("top", `${event.pageY - 28}px`);
-                })
-                .on("mouseout", function() {
-                    d3.select(this).attr("stroke", "none");
-                    d3.select("#tooltip").style("display", "none");
-                })
-                .on("click", function(event, d) {
-                    alert(`Province: ${d.properties.name}\nPopulation: ${d.properties.data.population}\nHomelessness Rate: ${d.properties.data.homelessness_rate}`);
-                });
-
-            // Set up filter and search functionality
-            d3.select("#filter").on("change", function() {
-                const filterValue = this.value;
-                svg.selectAll("path")
-                    .transition()
-                    .duration(500)
-                    .attr("fill", d => {
-                        const metric = d.properties.data[filterValue] || 0;
-                        return colorScale(metric);
-                    });
-            });
-
-            d3.select("#search").on("input", function() {
-                const searchTerm = this.value.toLowerCase();
-                svg.selectAll("path")
-                    .style("opacity", d => {
-                        return d.properties.name.toLowerCase().includes(searchTerm) ? 1 : 0.2;
-                    });
-            });
-        });
-    </script>
+    <!-- Include D3.js Library -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Link to External JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
