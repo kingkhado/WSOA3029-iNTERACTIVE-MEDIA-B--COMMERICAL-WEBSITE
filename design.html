@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website</title>
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/design.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore our responsive website dedicated to providing vital resources and support for homelessness. Learn about our mission and ways to make an impact.">
+        <meta name="keywords" content="homelessness, support, resources, community, charity, responsive design">
+        <meta name="author" content="Makhado Khashane">
+    
+        <title>Responsive Website for Homelessness Support</title>
+        
+        <!-- Open Graph Meta Tags for Social Media Sharing -->
+        <meta property="og:title" content="Responsive Website for Homelessness Support">
+        <meta property="og:description" content="Discover our mission to support homelessness through resources and community engagement. Join us in making a positive impact.">
+        <meta property="og:image" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/assets/images/share-image.jpg">
+        <meta property="og:url" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/page-url">
+        <meta property="og:type" content="website">
+    
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/page-url">
+    
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/design.css">
+    </head>
+    
 <body>
+
+    
+    <!--==================== PROGRESS BAR ====================-->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div> <!-- Filled part of the progress bar -->
+    </div>
+
+    
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
             <div class="nav__actions">
                 <header>
                     <div class="header-logo-text">
-                        <img src="website images/icon-homeless.png" alt="Logo">
+                        <img src="website images/icon-homeless.png" alt="HHD Organisation Logo">
                     </div>
                 </header>
                 <!-- Toggle button -->
@@ -48,7 +72,7 @@
                     </p>
                 </div>
                 <div class="logo">
-                    <img src="website images/icon-homeless.png" alt="">
+                    <img src="website images/icon-homeless.png" alt="HHD Organisation Logo">
                 </div>
             </div>
             
@@ -71,164 +95,283 @@
             </div>
         </div>
 
-
-
         <div class="slider-container">
             <div class="slider">
                 <div class="slide active">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Homepage.png" alt="Wireframe 1">
-                    <p class="description">
-                        Wireframe 1: The homepage wireframe is crafted to immediately engage users with its vibrant visual of Hungerman, the superhero dedicated to combating hunger among children. The design features a bold heading, <strong>HUNGERMAN</strong>, and the motivating phrase "One Meal at a Time," which emphasizes the organization's mission. The navigation bar is intuitively positioned at the top, providing straightforward access to essential sections like <strong>Home</strong>, <strong>About</strong>, <strong>Get Involved</strong>, and <strong>Contact</strong>. 
-                    </p>
-                    <p class="description">
-                        The <strong>Donate Now</strong> button stands out prominently, serving as a crucial call to action, encouraging immediate contributions. Below this, the <strong>Mission Statement</strong> succinctly communicates the organization's purpose, ensuring clarity for visitors. The layout employs a clean, grid-based structure, organizing interactive elements like the <strong>Donation Meter</strong>, <strong>Sign Up</strong> button, and <strong>Get Help</strong> option in a way that directs user attention efficiently. Every design choice aims to enhance usability, ensuring an engaging and intuitive experience for all users.
-                    </p>
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME HOMEPAGE.png" alt="Wireframe 1" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 1: Homepage Layout</h3>
+                            <p class="description">This layout presents the main navigation, featured content, and call-to-action buttons, designed to guide users through the website's core sections effectively.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="slide">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Homepage Style Guide.png" alt="Wireframe 2">
-                    <p class="description">
-                        Style Guide: The typography for the Hungerman website plays a crucial role in reinforcing the superhero theme. The primary font, <strong>"Press Start 2P,"</strong> offers a bold, pixelated aesthetic that captures the playful yet serious nature of the organization’s mission. Headlines and titles are designed to stand out with their striking appearance, while body text remains black and clean, ensuring readability against light backgrounds. This careful selection enhances the professional feel of the site while maintaining an engaging visual identity.
-                    </p>
-                    <p class="description">
-                        The color palette is essential in establishing brand recognition and emotional connection. The primary color, a vibrant <strong>red (#E72121)</strong>, symbolizes urgency and action, particularly in the context of hunger relief. Lighter shades of red are used for buttons and backgrounds, creating a sense of depth and variation. Text colors are chosen for optimal contrast; white is used for button text to ensure high visibility against red backgrounds, while black is reserved for body text to promote clarity.
-                    </p>
-                    <p class="description">
-                        Button design is intentionally simple yet effective, with backgrounds in red or its lighter shades, ensuring that buttons are easily identifiable. Text on buttons is white, bold, and centered, drawing user attention and encouraging interaction. The use of clean, simple icons within lighter red boxes further aligns with the pixelated aesthetic, maintaining consistency throughout the site. This thoughtful design strategy not only enhances the visual appeal but also improves usability by guiding users intuitively through their options.
-                    </p>
-                    <p class="description">
-                        Imagery on the site, particularly the hero visual of Hungerman delivering a pizza, encapsulates the organization’s mission in a relatable and engaging manner. The pixelated or comic-like style of the imagery matches the overall theme, appealing especially to a younger audience. This alignment between style and purpose strengthens the website's ability to communicate its message effectively while fostering a sense of connection with its target demographic.
-                    </p>
-                    <p class="description">
-                        Lastly, the layout grid is meticulously structured to provide a clear hierarchy of content. Consistent spacing and alignment are used to guide users' eyes smoothly from one section to the next, while ample whitespace helps to avoid clutter and enhances the overall user experience. This organization is particularly important in ensuring that users can easily access vital information and services, thus facilitating a more impactful engagement with the Hungerman initiative.
-                    </p>
-                    
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME HOMEPAGE-ABOUT.png" alt="Wireframe 2" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 2: About Us Layout</h3>
+                            <p class="description">This section introduces the organization’s mission clearly and builds trust with visitors. A house-and-heart icon reinforces the mission visually, adding an inviting touch. Key statistics on poverty and homelessness are displayed in structured cards, helping users grasp the issue's scope at a glance while maintaining a balanced, accessible layout.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="slide">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Colores light.png" alt="Wireframe 3">
-                    <p class="description">
-                        Color Choices: The color palette for the final website design has been carefully selected to create a visually appealing and user-friendly experience. The use of various shades of blue serves multiple purposes, enhancing the overall aesthetic while also improving functionality. Darker blues, such as <strong>#003366</strong> for drop shadows and glows, add depth and dimension to elements on the page. This not only helps in creating a layered effect but also guides the user’s attention to key interactive features.
-                    </p>
-                    <p class="description">
-                        Lighter shades of blue, such as <strong>#99CCFF</strong>, are utilized for buttons, making them stand out against the black background. This contrast ensures that the buttons are easily recognizable and encourages user interaction. The choice of a black background, represented by <strong>#000000</strong>, provides a sleek, modern look while minimizing distractions, allowing content to take center stage. This color scheme also contributes to a sophisticated and professional appearance, aligning with the nonprofit organization’s goals.
-                    </p>
-                    <p class="description">
-                        Text color plays a vital role in readability and accessibility. White, represented by <strong>#FFFFFF</strong>, is used for headings, ensuring high visibility against the dark background and creating a striking focal point for users. Grey, such as <strong>#CCCCCC</strong>, is chosen for body text, striking a balance between contrast and comfort, as it reduces eye strain and enhances readability. This thoughtful combination of colors not only enhances the visual hierarchy of the website but also supports a seamless user experience, allowing visitors to easily navigate and absorb the content presented.
-                    </p>
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED HOMEPAGE JTM.png" alt="Wireframe 3" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 3: Join The Movement Layout</h3>
+                            <p class="description">The "Join the Movement" page uses icons paired with concise text to clearly convey specific goals and actions. The illustrations create a dynamic, engaging visual flow, allowing visitors to quickly grasp mission areas without heavy reading.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="slide">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Desktop - Responsive Donation website HOME.png" alt="Wireframe 4">
-                    <p class="description">
-                        Homepage Overview: The homepage design incorporates a clean and intuitive navigation bar, which is presented in white to maintain a minimalist aesthetic. Upon interaction, the navigation elements transition to shades of blue, such as <strong>#99CCFF</strong>, providing immediate feedback to the user and enhancing engagement. This color change not only adds a dynamic feel to the navigation but also aids in establishing a clear visual hierarchy, making it easy for users to identify their current location within the site.
-                    </p>
-                    <p class="description">
-                        As users scroll down the page, they will experience a scroll-and-reveal effect, where images fade in and glow into view. This animation adds a layer of excitement and anticipation, making the browsing experience feel more interactive and lively. Additionally, the statistics presented on the homepage will round up numbers and display them in clickable and hoverable containers. This design choice invites users to interact with the statistics, fostering a sense of connection and encouraging further exploration of the information provided.
-                    </p>
-                    <p class="description">
-                        To enhance navigation and user experience, a hovering arrow will appear as users reach the bottom of the page, prompting them to scroll back up. This subtle yet effective feature ensures that users remain oriented within the website, guiding them effortlessly through the content. Overall, these animations and reveal effects contribute to an engaging and dynamic website experience, making users feel as if the site is alive and responsive to their actions. By incorporating these thoughtful UI and UX decisions, the homepage successfully captures the essence of the Hungerman nonprofit organization, drawing users in and encouraging them to engage with the cause.
-                    </p>
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME HOMEPAGE-HTH.png" alt="Wireframe 5" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 4: How to Help Layout</h3>
+                            <p class="description">The "How to Help" section presents multiple donation options with clear pricing to simplify decision-making and accommodate various contributions. Each option, like "Provide Clothing" or "Provide Shelter," is paired with an icon and label, creating a uniform, easy-to-scan layout that keeps the page visually balanced.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME HOMEPAGE-WYEM.png" alt="Wireframe 6" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 5: Why Your Effort Matters Layout</h3>
+                            <p class="description">The "Why Your Effort Matters" section uses a heartwarming image and bullet points to highlight the impact of donations, making an emotional connection with users. Checkmarks beside each point improve readability, guiding users through the benefits of contributing and reinforcing the importance of their support for the cause.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME HOMEPAGE-CONTACT US.png" alt="Wireframe 7" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 6: Contact Us Layout</h3>
+                            <p class="description">The contact page wireframe focuses on providing an intuitive form for user inquiries, with easy-to-find contact details and a map integration for location reference.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME HOMEPAGE-FOOTER-SCROOL UP.png" alt="Wireframe 14" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 7: footer Scroll Up Layout</h3>
+                            <p class="description">The footer’s scroll-up button, a black box with a white arrow, appears upon reaching the bottom of any page, offering a quick return to the top. Its subtle spring-up animation catches attention without distraction, enhancing usability with a smooth, responsive navigation option.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME TESTIMONIAL.png" alt="Wireframe 8" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 8: Testimonial Layout</h3>
+                            <p class="description">The **Testimonial** section uses a powerful before-and-after image to showcase the transformative impact of support, aligning with the mission to aid those in need. A “SEE MORE” call to action invites users to explore personal journeys, building empathy and connection. Navigation arrows allow seamless browsing between testimonials, while the **"SEE ALL"** button lets users return to the main testimonials page effortlessly, enhancing usability and encouraging further exploration of impactful stories.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME DONATE.png" alt="Wireframe 10" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 9: Donate Layout</h3>
+                            <p class="description">The **Donate Page** emphasizes the theme “Support Our Cause” with bold, vertical “D O N A T E” text for a memorable visual effect. Each donation item—like Free Books, Clothing, or Shelter Fare—appears in a card with an image, donation amount (from R0 to R100), and an “Add To Cart” button, making options clear and easy to select. A cart button provides a quick summary of selected items and options to checkout or close, streamlining the donation process for users.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME NODE DATA VIS.png" alt="Wireframe 11" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 10: Node Edge VisualLayout</h3>
+                            <p class="description">The Node-Edge Visual Wireframe highlights Bible verses on giving to the poor, with each verse displayed as a node organized by chapter within a toolkit. Lines connect related verses, forming a visual network that emphasizes themes of generosity, kindness, and support for those in need. Color-coded nodes differentiate chapters, enhancing clarity and helping users follow connections as they explore related scriptures in an interactive, cohesive format.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME NODE DATA VIS BAR.png" alt="Wireframe 12" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 11: Bar Graph Layout</h3>
+                            <p class="description">The **Homeless Population Bar Chart Page** for South Africa features an interactive bar graph displaying population data across provinces, with a focus on homelessness. Customizable buttons enhance user experience, allowing toggling between general and homeless population data. Sorting options let users organize the data in ascending or descending order by population size, while a reset button restores the chart to its original view. This setup provides clear, interactive insights into homelessness and population distribution across provinces.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME DESIGN.png" alt="Wireframe 13" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 12: Design Layout</h3>
+                            <p class="description">The Design section introduces the design process with the title and an overview that explains the website's UI/UX foundation, fostering transparency and trust. The wireframe highlights the layout and design rationale, providing users with insight into the creation of a user-friendly interface. Simple navigation through "PREV" and "NEXT" buttons ensures a smooth, continuous transition between design phases or sections, enhancing the user experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/ANIMATED WIREFRAME THEORY.png" alt="Wireframe 14" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Wireframe 13: Theory Layout</h3>
+                            <p class="description">**The Theory** section offers a detailed explanation of the design’s analytical foundation, with the heading and description guiding users through the purpose and decisions behind each visualization. Dot navigation enhances interactivity and organization, allowing users to easily explore different essays. The "Read More," "Preview," and "Download" buttons in the essay preview section provide flexible engagement options, catering to varying levels of interest in the content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/Donation website colour palette.png" alt="Style Guide Colour Scheme" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Style Guide: Colour Scheme </h3>
+                            <p class="description">
+                                <span><strong>#2C4A68 (Deep Blue) </strong>– This strong shade of blue is used for accent headings and buttons, conveying trust, stability, and compassion. Blue is often associated with calmness and reliability, making it ideal for a website that seeks to inspire trust and motivate donations for a charitable cause. The color creates visual interest while maintaining the professional tone needed for a non-profit organization.</span>
+                            
+                                <span><strong>#17798B0 (Bright Blue)</strong> – This lighter blue tone is used for highlighting key actions like “Donate Now.” It draws attention without overwhelming the user, encouraging interaction and engagement. Blue tones are commonly used in charity websites as they evoke feelings of care and empathy, aligning with the mission of helping those in need.</span>
+                                
+                                <span><strong>#ADAFB9 (Light Gray) </strong>– This shade is applied to background sections to soften the high contrast between dark and light elements. It ensures readability without causing eye strain, creating a calm and professional look that allows users to focus on the information presented.</span>
+                                
+                                <span><strong>>#FAFBFB (White)</strong> – White is used for text and button backgrounds. This neutral color provides high contrast against dark backgrounds, enhancing readability. It contributes to a clean and minimalistic look, allowing the primary colors to stand out, which is essential for user navigation.</span>
+                                
+                                <span><strong>#000000 (Black) </strong>– The deep black color is used as the primary background color, creating a sleek, modern, and professional aesthetic. The black background enhances the readability of white and blue text, making key messages and calls to action stand out. The dark theme reflects the serious nature of the cause, resonating with the user on an emotional level.</span>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/montserrat font.jpg" alt="Style Guide Typography" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Style Guide: Font Choice</h3>
+                            <p class="description">Montserrat Sans-Serif – Montserrat has been chosen for its modern and clean style, which aligns well with the serious and professional tone of the website. Montserrat is easy to read, even in smaller sizes, making it an excellent choice for both headings and body text. The typeface’s clarity ensures effective communication, especially in conveying essential information about donations and support options.
 
-                    <p class="description">
-                        Color Impact: The use of calming blue water colors throughout the site plays a significant role in shaping the user's emotional response as they enter the website. Shades such as <strong>#99CCFF</strong> and <strong>#003366</strong> are carefully selected to evoke a sense of tranquility and peace. By creating a serene atmosphere, I aimed to foster an environment that encourages users to adopt a relaxed and open mindset.
-                    </p>
-                    <p class="description">
-                        This thoughtful approach is particularly important when discussing sensitive topics such as homelessness. I believe that a compassionate mindset is essential for users to fully engage with the content and understand the challenges faced by those in need. The calming blues help create a welcoming space that invites visitors to reflect on the information presented and consider how they can contribute to the cause.
-                    </p>
-                    <p class="description">
-                        Overall, the color palette not only enhances the visual appeal of the website but also serves a deeper purpose in promoting empathy and compassion among users as they navigate through the site. By aligning the aesthetic elements with the mission of Hungerman, I hope to inspire meaningful connections and encourage action in support of the homeless community.
-                    </p>  
+                                Font Weight and Hierarchy:
+                                
+                                Bold for headings, such as “HELP THE HOMELESS DONATE NOW” – Bold weights emphasize urgency and importance, guiding the user’s attention to key messages and calls to action.
+                                Regular for body text – Regular weight is used for descriptive text and additional information, maintaining readability and a clean appearance</p>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="slide">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Desktop - Responsive Donation website TESTIMONY.png" alt="Wireframe 5">
-                    <p class="description">
-                        Testimonials Section: The testimonials page showcases inspiring stories from individuals who have experienced homelessness and successfully turned their lives around. To present these powerful narratives, the page employs a carousel that features before-and-after images of the individuals. This visually impactful layout not only highlights their transformations but also engages users by inviting them to reflect on the journeys of these resilient individuals.
-                    </p>
-                    <p class="description">
-                        The carousel is designed with smooth animations, where images transition in a captivating manner. When swapping between testimonials, the images blur out and fade in, creating a seamless experience that maintains user interest. This effect adds a dynamic touch to the presentation, making it feel more alive and engaging. The interactive arrow buttons allow users to navigate back and forth through the testimonials, encouraging exploration of each individual’s story.
-                    </p>
-                    <p class="description">
-                        As the carousel progresses, the text fades in and falls down to reveal the names of the individuals featured. This animation not only adds visual appeal but also enhances the emotional connection with the audience. By presenting real stories in this interactive format, I aim to create a sense of hope and possibility, showing visitors the impact that support and compassion can have on individuals’ lives. Overall, the testimonials section is designed to inspire and motivate users to engage with the cause, reinforcing the mission of Hungerman.
-                    </p>
-                </div>
-
-                <div class="slide">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Desktop - Responsive Donation website DONATE.png" alt="Wireframe 6">
-                    <p class="description">
-                        Donation Items Page: This page is designed to showcase all the items available for donation, presented within a visually appealing blue container. The use of blue reinforces the calming and compassionate atmosphere of the site, encouraging users to consider contributing to the cause. Each item is displayed clearly, allowing users to easily browse through the options and select items they wish to donate.
-                    </p>
-                    <p class="description">
-                        When a user clicks on an item, it is immediately added to their shopping cart, providing instant feedback and enhancing the user experience. This seamless interaction eliminates unnecessary steps and keeps the donation process straightforward and efficient. Users can then decide whether to proceed to checkout or continue browsing for additional items, ensuring that they have full control over their donation choices.
-                    </p>
-                    <p class="description">
-                        Upon successfully completing the checkout process, the confirmation message turns green, signifying a successful transaction and providing a sense of accomplishment. This color choice not only signifies success but also adds to the positive user experience by reinforcing the idea that their contributions are making a difference. The close button is designed in white, offering a clear and contrasting option for users to exit the page easily. Overall, this donation items page is designed to facilitate a smooth and engaging donation experience, motivating users to take action and support the mission of Hungerman.
-                    </p>                    
-                </div>
-
-                <div class="slide">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Desktop - Responsive Donation website Data Visualization.png" alt="Wireframe 7">
-                    <p class="description">
-                        Bible Verses Visualization Page: This innovative page features a D3.js data visualization that creatively represents Bible verses centered around the theme of giving to the poor. The visualization takes the form of nodes orbiting around a central point, creating a dynamic and engaging experience for users. Each node represents a specific Bible verse, and verses from the same chapter are color-coded consistently, making it easy for users to identify related verses at a glance.
-                    </p>
-                    <p class="description">
-                        The interactive nature of the visualization allows users to explore the verses intuitively. When a user clicks on a node, a corresponding Bible verse will open, providing context and inspiration related to the theme of generosity and compassion. This feature not only enhances user engagement but also encourages deeper reflection on the importance of giving and helping those in need. The combination of interactivity and visual storytelling creates a unique experience that aligns with the mission of Hungerman, fostering a sense of connection to the biblical teachings.
-                    </p>
-                    <p class="description">
-                        Overall, this page aims to blend technology and spirituality, creating an immersive environment where users can engage with scripture while exploring the vital message of supporting the poor. The use of color-coded verses and the orbiting node structure contribute to an aesthetically pleasing design that captures users' attention and invites them to reflect on the teachings of compassion and charity found in the Bible.
-                    </p>
-
-                    <p class="description">
-                        Homeless Shelters Visualization Page: This page features a D3.js choropleth map designed to help users locate homeless shelters throughout South Africa. The map employs a color-coding system, with areas identified in red representing the locations of various shelters. This visual representation allows users to quickly and easily identify where assistance is available, enhancing the accessibility of vital resources for those in need.
-                    </p>
-                    <p class="description">
-                        When users hover over a shelter area, detailed information is displayed, providing crucial data about each shelter. The notification includes essential details such as the shelter name, location, province, price per week, and relevant crime statistics. For example, users may see a pop-up with the following information: 
-                        <strong>SHELTER NAME:</strong> HHD <br>
-                        <strong>LOCATION:</strong> Johannesburg CBD <br>
-                        <strong>PROVINCE:</strong> Gauteng <br>
-                        <strong>PRICE PER WEEK:</strong> XXXX <br>
-                        <strong>CRIME STATS:</strong> XXXX
-                        This transparency ensures users are well-informed about the available options and can make educated decisions about seeking help.
-                    </p>
-                    <p class="description">
-                        To enhance usability, the map includes a zoom-in feature at the bottom, allowing users to distinguish between shelters located close to one another. This feature is particularly beneficial in densely populated urban areas, where multiple shelters may be situated in proximity. Overall, this choropleth map not only serves as a practical tool for locating resources but also reinforces the mission of Hungerman by providing critical information to those seeking assistance and highlighting the available support in their communities.
-                    </p>                      
-                </div>
-                <div class="slide active">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Desktop - Responsive Donation website DESIGN.png" alt="Wireframe 8">
-                    <p class="description">
-                        Wireframes Page: This page is dedicated to presenting the design evolution of Hungerman, transitioning the title from "HHD {THE DESIGN}" to "HHD {THE CHANGE}". This shift in wording reflects the transformative impact the organization aims to achieve through its mission and initiatives. The introduction text is styled in a calming grey, creating a neutral background that draws users' attention to the key elements of the page.
-                    </p>
-                    <p class="description">
-                        Central to this page is a slider feature that showcases the various wireframes developed throughout the design process. Users can interact with the slider to navigate through different wireframe designs, which highlight the layout and functionality of the website. Each wireframe is accompanied by descriptive texts that provide insights into the design rationale and the user experience considerations behind each element. This interactive design allows users to understand how the visual aspects of the website support its overall mission and goals.
-                    </p>
-                    <p class="description">
-                        The buttons within the slider are designed for easy navigation, allowing users to slide through the wireframes and descriptions seamlessly. This interactive approach not only enhances user engagement but also encourages users to appreciate the thought and effort invested in the design process. Overall, the wireframes page serves as a crucial element of the site, illustrating the journey of HHD and how design plays a vital role in creating positive change for those in need.
-                    </p>      
-                </div>
-                <div class="slide active">
-                    <img src="FIGMA - DESIGN Responsive Donation Website (1)/Desktop - Responsive Donation website DESIGN-1.png" alt="Wireframe 9">
-                    <p class="description">
-                        Theory Page: This page serves as an exploration of the foundational concepts underlying the mission of HHD, featuring a dynamic text animation that transitions from "HHD {THE THOUGHT}" to "HHD {THE THEORY}". This change reflects the critical thinking and theoretical framework that guide the organization’s initiatives and goals. The introduction text provides a brief overview of the importance of understanding the theoretical aspects of homelessness and charitable giving, setting the stage for the content that follows.
-                    </p>
-                    <p class="description">
-                        Central to the page is an essay preview button that allows users to gain insights into the theoretical discussions surrounding the topic. This button is accompanied by a corresponding essay download button, featuring a downward-facing arrow, inviting users to download the full essay for in-depth reading. This dual approach ensures that users can engage with the material at their own pace, whether through a quick preview or by delving deeper into the topic.
-                    </p>
-                    <p class="description">
-                        Below these buttons, the text container houses a detailed explanation of the theory, presenting key concepts and insights related to homelessness, charity, and the impact of community support. In addition to this text, the page features interactive data visualizations, including a choropleth map that identifies homeless shelters in South Africa, a node and edge data visualization showcasing biblical verses about giving to the poor, and an interactive dashboard displaying homelessness statistics by province. These visualizations provide users with a visual understanding of the data, making the theoretical concepts more tangible and relatable.
-                    </p>
-                    <p class="description">
-                        Overall, the theory page not only enhances the educational aspect of the website but also reinforces the mission of HHD by providing users with a comprehensive understanding of the issues at hand, supported by both textual analysis and engaging data visualizations.
-                    </p>
+                    <div class="slide-content">
+                        <img src="website images/icon-homeless.png" alt="Style Guide brand Icon" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Style Guide: Brand Icon</h3>
+                            <p class="description">
+                                <span>The website centers around supporting charitable causes</span>, with an emphasis on building a community of care and trust. To reflect this mission, I named the platform <span>“Helping Hands Donate”</span>, emphasizing the focus on compassion and aid. The logo visually conveys this purpose: it combines a simple outline of a house with an open hand at its center. This design represents both the comfort and security of a home and the welcoming, supportive nature of an outstretched hand.
+                           
+                            
+                         >
+                                <span>The hand within the house symbol is a powerful and memorable brand identity</span> that aligns with our commitment to helping others. The logo suggests that charity begins at home and that even small, individual acts of kindness can create a safe and nurturing environment. The clean lines and thoughtful symbolism make the logo approachable and trustworthy, reflecting the values at the heart of this non-profit platform.
                          
+                           
+                            
+                           
+                                <span >The color palette</span>, a mix of deep and bright blues, light gray, and white, complements this theme. These colors evoke a sense of calm, empathy, and security, making the platform inviting while maintaining a professional, credible aesthetic.
+                     
+                            
+                           
+                                To further establish trust and enhance credibility, icons for recognized, secure payment options are prominently displayed. This reassures users that their donations are handled with care and security, building confidence in the website’s transaction process.
+                     
+                            
+                        </div>
+                    </div>
                 </div>
 
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/Header (1).png" alt="Style Guide Header Navigation" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Style Guide: Header <Noscript></Noscript>Navigation</h3>
+                            <p class="description">The navigation bar on HHD is designed for a smooth and intuitive browsing experience. The active page is highlighted in a distinct blue, allowing users to instantly recognize their current location on the site. Each navigation item is interactive; hovering over an option reveals a pointer cursor, inviting users to explore further. The layout ensures ample spacing between links, providing both readability and a refined aesthetic, making it easy for visitors to navigate the content effortlessly</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/website-clipart-web-icon-3.png" alt="Style Guide Typography" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Style Guide: Final Remarks</h3>
+                            <p class="description">
+                                <span><strong>Dark Background with High-Contrast Elements</strong> – The decision to use a dark background with contrasting white and blue text elements emphasizes readability and gives the site a modern, impactful look. It reflects the seriousness of the cause and encourages a focused experience without distractions.</span>
+                                
+                                <span><strong>Rounded Iconography and Buttons: </strong> – The rounded shapes in icons and buttons create a sense of approachability, inviting users to engage without feeling overwhelmed. This softens the serious tone of the website, making it feel supportive and encouraging rather than overly stern.</span>
+                                
+                          
+                            
+                       
+                                <span><strong>Strengths:</strong> Emotionally Engaging – The combination of dark tones, powerful images, and compelling calls to action creates a strong emotional appeal, which is crucial for encouraging donations.</span>
+                                
+                                <span><strong>Clear Information Flow: </strong>– The hierarchical layout ensures users can quickly find information and navigate the site with ease.</span>
+                                
+                                <span><strong>Professional and Trustworthy: </strong>– The use of blue and black tones, alongside clear data and testimonials, enhances the site's credibility and encourages trust in the organization.</span>
+                          
+                            
+                           
+                                <span><strong>Weaknesses:</strong> Limited Color Palette – While the dark theme aligns well with the mission, it may feel heavy or somber to some users. Adding a few more warm tones might help balance the mood.</span>
+                                
+                                <span><strong>Minimal Animation/Interactivity: </strong>– Adding subtle animations, such as hover effects on buttons, could enhance engagement and provide a more dynamic user experience.</span>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
 
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/information strucutre .png" alt="Design Information Structure" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Design: Information Structure</h3>
+                            <p class="description">
+                                <span><strong>Home Page Overview:</strong> The home page introduces the organization’s mission and provides an 'About Us' section. Users can navigate to join the movement, learn about ways to contribute, and understand the importance of their involvement. The page concludes with contact information and a footer for easy access to other parts of the site.</span>
+                                
+                                <span><strong>Testimony Page:</strong> This page showcases inspiring stories from those who have benefited from the initiatives, highlighting real-life impacts and emphasizing the value of community support.</span>
+                                
+                                <span><strong>Donate Page:</strong> Here, users can explore donation options. Multiple contribution choices allow donors to select how they wish to fund the organization’s efforts against homelessness.</span>
+                                
+                                <span><strong>Bible Verses Visual Node:</strong> This section presents a collection of inspirational Bible verses aligned with the organization’s mission. Each verse promotes themes of charity and kindness to encourage community support.</span>
+                                
+                                <span><strong>Homeless Population Graph Visual:</strong> This page uses data visualizations to provide insights into homelessness, showcasing trends and statistics that highlight the need for action.</span>
+                                
+                                <span><strong>Design Page:</strong> This page explains the design principles and visual choices of the website. It includes wireframes that align with the organization’s mission and values, enhancing the user experience through thoughtful design elements.</span>
+                                
+                                <span><strong>Theory Page:</strong> This section delves into the theoretical foundations guiding the organization’s initiatives and explains the principles behind its actions.</span>
+                                
+                                <span><strong>Footer:</strong> Each page includes a footer with links and contact information, allowing users to easily access other sections of the site.</span>
+                            </p>                          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="website images/Blue Simple Process Flow Chart Graph (1).png" alt="Design User Flow" class="slider-image">
+                        <div class="text-content">
+                            <h3 class="caption">Design: User flow</h3>
+                            <p class="description">
+                                <span><strong>Flow 1 (Read Testimonials):</strong> The user reads testimonials by exploring introductory content and tapping "see more" for additional stories.</span>
+                                <span><strong>Flow 2 (Make a Donation):</strong> The user views donation options, selects an item to donate, proceeds to checkout, and completes the transaction.</span>
+                                <span><strong>Flow 3 (Explore Node Visuals):</strong> The user reads introductory texts, drags and clicks on nodes for more info, and explores connections.</span>
+                                <span><strong>Flow 4 (Interact with Graph Visuals):</strong> The user views charts, clicks on them for details, and interacts with buttons for further engagement.</span>
+                                <span><strong>Flow 5 (Learn About Design):</strong> The user reads about design processes, views wireframes, and scrolls through a slide for deeper insight.</span>
+                                <span><strong>Flow 6 (Read Theory Content):</strong> The user reads theory sections, explores essays, and navigates between essays using dot navigation.</span>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            
+             
             </div>
             <div class="controls">
-                <button class="prev">Previous</button>
+                <button class="prev">Prev</button>
                 <button class="next">Next</button>
             </div>
         </div>
+        
+        
+        
+
+      
         
     </main>
     <!--==================== FOOTER ====================-->

@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive website focused on providing resources and support for homelessness. Learn more about our mission and how you can help.">
-    <meta name="keywords" content="homelessness, support, resources, community, charity">
-    <meta name="author" content="Makhado Khashane">
-    <title>Support Our Cause - HHD</title>
+    <meta name="description" content="Explore resources, support, and community efforts addressing homelessness. Join our mission to make a difference.">
+    <meta name="keywords" content="homelessness, resources, support, community, charity, mission, help">
+    <meta name="author" content="Makhado Khashane">    
+
+    <title>Donation | Resources and Support for Homelessness</title>
+    
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Home | Resources and Support for Homelessness">
+    <meta property="og:description" content="Explore resources and support addressing homelessness. Discover ways you can contribute to our mission.">
+    <meta property="og:image" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/assets/images/share-image.jpg">
+    <meta property="og:url" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/index.html">
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
+    <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/donation.css">
 </head>
+
 <body>
- 
+
+    <!--==================== PROGRESS BAR ====================-->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div> <!-- Filled part of the progress bar -->
+    </div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
             <div class="nav__actions">
                 <div class="header-logo-text">
-                    <img src="website images/icon-homeless.png" alt="HHD Logo - Helping the Homeless">
+                    <img src="website images/icon-homeless.png" alt="Homeless Organisation Logo">
                 </div>
 
                 <!-- Toggle button -->
@@ -28,6 +46,7 @@
                     <i class="ri-menu-line"></i>
                 </div>
             </div>
+
             <!-- Close button -->
             <div class="nav__close" id="nav-close">
                 <i class="ri-close-line"></i>
@@ -35,67 +54,73 @@
         </nav>
     </header>
 
-    <!--==================== DONATE SECTION ====================-->
-    <section class="donate section" id="donate" aria-labelledby="donate-title">
-        <h2 class="section__title" id="donate-title">Support Our Cause</h2>
-        <div class="donate__container container grid">
-            <div class="donate__content">
-                <div class="donate__button-container">
-                    <span class="donate__button-letter" id="D">D</span>
-                    <span class="donate__button-letter" id="O">O</span>
-                    <span class="donate__button-letter" id="N">N</span>
-                    <span class="donate__button-letter" id="A">A</span>
-                    <span class="donate__button-letter" id="T">T</span>
-                    <span class="donate__button-letter" id="E">E</span>
+    <main>
+        <!--==================== DONATE SECTION ====================-->
+        <section class="donate section" id="donate" aria-labelledby="donate-title">
+            <h2 class="section__title" id="donate-title">Support Our Cause</h2>
+            <div class="donate__container container grid">
+                <div class="donate__content">
+                    <div class="donate__button-container">
+                        <span class="donate__button-letter" id="D">D</span>
+                        <span class="donate__button-letter" id="O">O</span>
+                        <span class="donate__button-letter" id="N">N</span>
+                        <span class="donate__button-letter" id="A">A</span>
+                        <span class="donate__button-letter" id="T">T</span>
+                        <span class="donate__button-letter" id="E">E</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!--==================== DONATION LIST ====================-->
-    <section class="donation-list container">
-        <header>
-            <h1 class="title">Donation List</h1>
-            <div class="icon-cart" role="alert">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
-                </svg>
-                <span>0</span>
+        <!--==================== DONATION LIST ====================-->
+        <section class="donation-list container">
+            <header>
+                <h1 class="title">Donation List</h1>
+                <div class="icon-cart" role="alert">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                    </svg>
+                    <span>0</span>
+                </div>
+            </header>
+            <div class="donation-container"></div>
+            <div class="listDonation">
+                <!-- Dynamic donation list will be populated here -->
             </div>
-        </header>
-        <div class="donation-container"></div>
-        <div class="listDonation">
-            <!-- Dynamic donation list will be populated here -->
-        </div>
-    </section>
+        </section>
 
-    <!--==================== SHOPPING CART ====================-->
-    <div class="cartTab">
-        <h2>Shopping Cart</h2>
-        <div class="listCart">
-            <!-- Dynamic shopping cart will be populated here -->
+        <!--==================== SHOPPING CART ====================-->
+        <div class="cartTab">
+            <h2>Shopping Cart</h2>
+            <div class="listCart">
+                <!-- Dynamic shopping cart will be populated here -->
+            </div>
+            <div class="btn">
+                <button class="close">CLOSE</button>
+                <button class="checkOut">Check Out</button>
+            </div>
         </div>
-        <div class="btn">
-            <button class="close">CLOSE</button>
-            <button class="checkOut">Check Out</button>
-        </div>
-    </div>
+
+    </main>
 
     <!--==================== FOOTER ====================-->
-    <footer>
-        <script src="assets/js/footer.js"></script>
-    </footer>
+    <script src="assets/js/footer.js"></script>
 
     <!--========== SCROLL UP ==========-->
-    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+    <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
     </a>
 
-    <!--=============== DONATION ===============-->
-    <script src="assets/js/donation.js"></script>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+
+    <!--=============== STATS JS ===============-->
+    <script defer src="assets/js/donation.js"></script>
+
+ 
 
 </body>
 </html>

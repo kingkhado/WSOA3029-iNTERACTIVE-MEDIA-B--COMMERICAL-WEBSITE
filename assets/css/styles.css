@@ -86,15 +86,7 @@ p {
   transition: all 0.3s ease;
 }
 
-.donate__button-letter:hover {
-  background-color: #fff;
-  color: #333;
-}
 
-.donate__button-letter.active {
-  background-color: #333;
-  color: #fff;
-}
 
 @keyframes pulse {
   0% {
@@ -203,6 +195,7 @@ img {
   z-index: var(--z-fixed);
 }
 
+
 .nav {
   position: relative;
   height: var(--header-height);
@@ -238,6 +231,37 @@ img {
   align-items: center;
 }
 
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  margin-left: 20px; 
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+/* Active link color for the current page */
+.nav__link.active-link {
+  color: var(--first-color); /* Matches the hover color */
+}
+
+
+.nav__close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+}
+
+
 /* Navigation for mobile devices */
 @media screen and (max-width: 1150px) {
   .nav__menu {
@@ -254,29 +278,7 @@ img {
   }
 }
 
-.nav__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-  margin-left: 20px; 
-}
 
-.nav__link {
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-  transition: color .4s;
-}
-
-.nav__link:hover {
-  color: var(--first-color);
-}
-
-.nav__close {
-  position: absolute;
-  top: 1.15rem;
-  right: 1.5rem;
-  font-size: 1.25rem;
-}
 
 /* Show menu */
 .show-menu {
@@ -297,10 +299,6 @@ img {
   z-index: -1;
 }
 
-/* Active link */
-.active-link {
-  color: var(--first-color);
-}
 
 /*=============== HOME ===============*/
 .home__container {
@@ -376,9 +374,42 @@ img {
   color: var(--first-color);
 }
 
-/*=============== NEWS ===============*/
+/*=============== NEWS AND ABOUT  ===============*/
 .new__data {
   text-align: center;
+}
+
+/*=============== ABOUT ===============*/
+.about__container {
+  display: flex;                /* Use Flexbox to enable centering */
+  flex-direction: column;       /* Align items vertically */
+  align-items: center;          /* Center items horizontally */
+  padding-top: 2.5rem;         /* Optional: Add top padding */
+}
+
+.about__img {
+  width: 270px;                /* Set width for the image */
+  filter: drop-shadow(var(--shadow-img)); /* Add drop shadow effect */
+  margin-bottom: 1.5rem;       /* Optional: Space below the image */
+}
+
+.about__title {
+  font-size: var(--biggest-font-size); /* Use your existing font variables */
+  font-weight: var(--font-bold);
+  text-align: center;          /* Center text */
+  margin-bottom: 1rem;         /* Space below the title */
+}
+
+.about__description {
+  text-align: center;          /* Center description text */
+  margin-bottom: 2rem;         /* Space below description */
+}
+
+.about__buttons {
+  display: flex;               /* Flex container for buttons */
+  justify-content: center;     /* Center buttons */
+  align-items: center;
+  column-gap: .5rem;          /* Space between buttons */
 }
 
 .new__container {
@@ -875,81 +906,86 @@ img {
   }
 
   .statistics {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.statistic {
-  background-color: var(--container-color);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.statistic.scrolled {
-  opacity: 1;
-}
-
-.statistic.active {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.statistic h3 {
-  font-size: var(--h3-font-size);
-  margin-bottom: 1rem;
-}
-
-.statistic .percent {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.statistic .percent span.percent-value {
-  font-size: 36px;
-}
-
-.statistic .counter {
-  font-size: 48px;
-  font-weight: bold;
-}
-
-/* Fade in animation */
-.statistic.scrolled {
-  animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem; /* Optional: Add horizontal padding to the container */
   }
-  100% {
+  
+  .statistic {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s;
+    max-width: 300px; /* Set a maximum width for the statistic blocks */
+    width: 100%; /* Ensure they take the full width of the available space */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+  
+  .statistic.scrolled {
     opacity: 1;
   }
-}
-
-/* Levitate animation */
-.statistic.active {
-  animation: levitate 0.5s forwards;
-}
-
-@keyframes levitate {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
+  
+  .statistic.active {
     transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
-  100% {
-    transform: translateY(0);
+  
+  .statistic h3 {
+    font-size: var(--h3-font-size);
+    margin-bottom: 1rem;
   }
-}
+  
+  .statistic .percent {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .statistic .percent span.percent-value {
+    font-size: 36px;
+  }
+  
+  .statistic .counter {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  
+  /* Fade in animation */
+  .statistic.scrolled {
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Levitate animation */
+  .statistic.active {
+    animation: levitate 0.5s forwards;
+  }
+  
+  @keyframes levitate {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
 
 /* Responsive design */
 @media screen and (max-width: 768px) {
@@ -1060,9 +1096,9 @@ transition: right 1.5s;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
+  top: 40%; /* Adjust this value to raise the text */
   transform: translateY(-50%);
-  width: 400px;
+  width: 300px;
   background-color: rgba(0, 0, 0, 0.5); /* Add a background color to the text box */
   padding: 20px;
   border-radius: 10px;
@@ -1081,18 +1117,18 @@ transition: opacity 0.5s;
   font-size: 2em;
   font-weight: 500;
   line-height: 1em;
-  color: #fff;
+  color: #1d68ffe9;
   margin-bottom: 10px;
 }
 .carousel .list .item .introduce .topic {
   font-size: 4em;
   font-weight: 500;
-  color: #fff;
+  color: #94b4e6;
   margin-bottom: 10px;
 }
 .carousel .list .item .introduce .des {
   font-size: small;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 .carousel .list .item .introduce .seeMore {
@@ -1100,15 +1136,15 @@ transition: opacity 0.5s;
   margin-top: 1.2em;
   padding: 5px 0;
   border: none;
-  border-bottom: 1px solid #cbc1c1;
+  border-bottom: 1px solid #857e7e84;
   background-color: transparent;
   font-weight: bold;
   letter-spacing: 3px;
   transition: background 0.5s;
-  color: #fff;
+  color: #ffffff;
 }
 .carousel .list .item .introduce .seeMore:hover{
-background: #eee;
+background: #221bee;
 }
 .carousel .list .item:nth-child(1){
 transform: var(--item1-transform);
@@ -1273,37 +1309,31 @@ flex-shrink: 0;
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications div p:nth-child(1){
 font-weight: bold;
 }
-.carousel.carousel.showDetail .list .item:nth-child(2) {
-font-family: Montserrat, sans-serif;
-background-color: transparent;
-border: 1px solid #5555;
-margin-left: 5px;
-padding: 5px 10px;
-letter-spacing: 2px;
-font-weight: 500;
-color: #fff;
-}
+
 .carousel.carousel.showDetail .list .item:nth-child(2) {
 
 color: #eee;
 }
 
-.carousel.showDetail .list .item:nth-child(2) .detail  .title,
-.carousel.showDetail .list .item:nth-child(2) .detail  .des,
-.carousel.showDetail .list .item:nth-child(2) .detail .specifications,
-.carousel.showDetail .list .item:nth-child(2) .detail {
-opacity: 0;
-animation: showContent 0.5s 1s ease-in-out 1 forwards;
+/* Set initial opacity and position for fade-in effect */
+.carousel.showDetail .list .item:nth-child(2) .detail .title,
+.carousel.showDetail .list .item:nth-child(2) .detail .des,
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition-delay: 0.3s; /* Optional: slight delay to start fade-in */
 }
-.carousel.showDetail .list .item:nth-child(2) .detail  .des{
-animation-delay: 1.2s;
+
+/* Trigger fade-in effect by adding the 'showDetail' class */
+.carousel.showDetail .list .item:nth-child(2) .detail .title,
+.carousel.showDetail .list .item:nth-child(2) .detail .des,
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
 }
-.carousel.showDetail .list .item:nth-child(2) .detail .specifications{
-animation-delay: 1.4s;
-}
-.carousel.showDetail .list .item:nth-child(2) .detail {
-animation-delay: 1.6s;
-}
+
 .arrows{
 position: absolute;
 bottom: 10px;
@@ -1420,22 +1450,113 @@ filter: blur(130px);
 }
 }
 
-
-
-
- /* Styles for the essay container */
- .essay-container {
-  background-color: #001f3f; /* Dark blue background */
-  color: white; /* White text */
-  padding: 20px; /* Padding inside the container */
-  margin: 20px auto; /* Centering the container */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-  width: 80%; /* Adjust width as needed */
-  max-width: 800px; /* Maximum width for larger screens */
-  font-family: 'Arial', sans-serif; /* Font style */
-  line-height: 1.6; /* Line height for readability */
+/* Progress Bar Styles */
+.progress-bar {
+  position: fixed; /* Keep the progress bar fixed in position */
+  top: 0; /* Align it to the top of the page */
+  right: 0; /* Align it to the left side */
+  width: 15px; /* Set a width for the progress bar */
+  height: 100%; /* Full height of the viewport */
+  background-color: #333; /* Dark background for the bar */
+  border: 2px solid #0080ff; /* Bright border to make it stand out */
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0 0 10px rgba(0, 106, 255, 0.5); /* Glow effect */
+  z-index: 1000; /* Ensure it is above other content */
+  overflow: hidden; /* Hide overflow for the fill */
 }
+
+.progress-fill {
+  height: 0; /* Start with 0 height */
+  width: 100%; /* Fill the width of the progress bar */
+  background: linear-gradient(180deg, #00b7ff, #0040ff); /* Gradient fill */
+  transition: height 0.2s ease; /* Smooth transition for height change */
+  border-radius: 5px; /* Match the border radius */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+}
+
+/* Adding a pulsing effect to the fill */
+@keyframes pulse {
+  0% {
+      transform: scaleY(1);
+  }
+  50% {
+      transform: scaleY(1.1);
+  }
+  100% {
+      transform: scaleY(1);
+  }
+}
+
+.progress-fill {
+  animation: pulse 1.5s infinite; /* Pulsing animation */
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+.arrow {
+  font-size: 50px; /* Adjust size as needed */
+  color: #333;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+
+.essay-container {
+  background-color: #1a1a1a; /* Dark background for a futuristic look */
+  color: #00ffcc; /* Robotic cyan text color */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.5);
+  width: 80%;
+  max-width: 800px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.essay-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.essay-button {
+  background-color: #001f3f;
+  color: #00ffcc;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.essay-button:hover {
+  background-color: #00ffcc;
+  color: #001f3f;
+}
+
+.essay-button.download {
+  background-color: #333;
+}
+
+.essay-button.download:hover {
+  background-color: #005f5f;
+}
+
 
 
 

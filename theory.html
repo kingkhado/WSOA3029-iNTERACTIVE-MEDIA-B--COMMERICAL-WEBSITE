@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theory</title>
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/design.css">
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A responsive website focused on providing resources and support for homelessness. Learn more about our mission and how you can help.">
+        <meta name="keywords" content="homelessness, support, resources, community, charity">
+        <meta name="author" content="Makhado Khashane">
+        
+        <title>Theory | Resources and Support for Homelessness</title>
+        
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Resources and Support for Homelessness">
+        <meta property="og:description" content="Discover resources and support for homelessness, and learn how you can make a difference.">
+        <meta property="og:image" content="https://yourwebsite.com/assets/images/share-image.jpg">
+        <meta property="og:url" content="https://yourwebsite.com/page-url">
+        <meta property="og:type" content="website">
+    
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/index.html">
+    
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/theorypage.css">
+        <link rel="stylesheet" href="assets/css/design.css">
+    </head>
+    
 <body>
+
+    <!--==================== PROGRESS BAR ====================-->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div> <!-- Filled part of the progress bar -->
+    </div>
+    
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
             <div class="nav__actions">
                 <header>
                     <div class="header-logo-text">
-                        <img src="website images/icon-homeless.png" alt="Logo">
+                        <img src="website images/icon-homeless.png" alt="HHD Organistation Logo">
                     </div>
                 </header>
                 <!-- Toggle button -->
@@ -130,16 +151,266 @@
             </div>
             
             
+            <div class="essay-navigation">
+                <!-- Navigation Dots -->
+                <div class="dot-navigation">
+                    <span class="dot" onclick="showEssay(0)"></span>
+                    <span class="dot" onclick="showEssay(1)"></span>
+                    <span class="dot" onclick="showEssay(2)"></span>
+                </div>
+            </div>
             
             <div class="essay-container">
-                <h3>Critical Analysis of Data Visualization in _How the Virus Won_</h3>
-                <p>
-                    <a href="writtendocuments/Critical Analysis of Data Visualization in _How the Virus Won_ (1).pdf" target="_blank">Download or View Essay PDF</a>
-                </p>
+                <div class="essay-card active">
+                    <h3>Critical Analysis of Data Visualization in *How the Virus Won*</h3>
+                    <p class="preview-text">
+                        This analysis explores the data visualization techniques used in the article "How the Virus Won" to uncover patterns and effects of COVID-19...
+                    </p>
+                    <div class="full-text" style="display: none;">
+                        <p><strong>Project Overview</strong></p>
+                        <p>On June 24, 2020, The New York Times published the data journalism piece <strong>"How the Virus Won,"</strong> written by Derek Watkins, Josh Holder, James Glanz, Weiyi Cai, Benedict Carey, and Jeremy White.</p>
+                        <p>Acts as a notable source, observed for its extensive and impactful coverage.</p>
+                        <p>This article, published at the height of the COVID-19 epidemic, attempts to demonstrate the virus's rapid and relentless spread throughout the United States.</p>
+                        <p>The page utilizes interactive visualizations, maps, and animated features to illustrate an account of how the virus entered communities and overwhelmed public health institutions.</p>
+                        
+                        <p><strong>Data Visualization Techniques</strong></p>
+                        <p>The user is confronted with a large, potent title that reads <strong>"How The Virus Won"</strong> promptly as they enter on the "How the Virus Won" webpage.</p>
+                        <p>The initial letter of each word is presented in all caps and is centred on the right side of the page.</p>
+                        <p>This powerful visual statement is accompanied by a map of the United States that graphically depicts the severity of the virus's spread across the various states with blue pencil-drawn lines and animated viral bubbles.</p>
+                        <p>The article's opening graphic establishes the tone and draws readers in by highlighting the pandemic's widespread effects.</p>
+                        
+                        <figure>
+                            <img src="website images/web images/screenshot of opening page of How the Virus Won.png" alt="Map showing virus spread" class="essay-image">
+                            <figcaption>Figure 1: Map visualizing the spread of COVID-19 across the United States. (Source: The New York Times)</figcaption>
+                        </figure>
+
+                        <p>Users will come across a succession of elegantly transitioning interactive animations that go along with the accompanying text boxes as they scroll across the website.</p>
+                        <p>For instance, two red beacons are displayed on the map to indicate the locations of the <strong>"first two cases of the virus [that] were in Seattle and Chicago,"</strong> as mentioned in the text.</p>
+                        <p>The reader is given a more immediate and palpable sense of the virus's progress because of the efficient reinforcement of the information provided by the text and animation synchronisation.</p>
+                        <p>Effective data storytelling, according to Riche et al. (2018), employs visual elements to provide abstract data a narrative context that engages the audience on an emotional and cognitive level.</p>
+                        
+                        <figure>
+                            <img src="website images/web images/Figure 1.2 showing the first known cases in the US.png" alt="Figure 1.2 showing the first known cases in the US" class="essay-image">
+                            <figcaption>Figure 2: Showing the first known cases in the US. (Source: The New York Times)</figcaption>
+                        </figure>
+                        
+                        <p>It's noteworthy that the article uses more dynamic and contextually integrated visualisations instead of standard bar graphs and line charts.</p>
+                        
+                        <p>The visual components include an intricate map of the United States, moving animations of humans as dots, death bubbles, variant virus bubbles, and dynamic virus bubbles that propagate.</p>
+                        
+                        <p>Together, these components produce a seamless and engrossing visual story.</p>
+                        
+                        <p>Additionally, the article highlights particular regions on the map by utilising various zoom levels and network animations to highlight population shifts, COVID occurrences, and other pertinent information.</p>
+                        
+                        <p>Animations can efficiently communicate complicated information over time, as Tversky et al. (2002) discussed, as long as they retain their clarity and narrative significance.</p>
+                        
+                        <p><strong>Interactivity and User Engagement</strong></p>
+                        
+                        <p>In order to engage users and comprehend data, <strong>"How the Virus Won"</strong> contains interactive elements.</p>
+                        
+                        <p>The article's dynamic transitions between text and graphic elements provide users a sense of continuity and immersion as they scroll through it.</p>
+                        
+                        <p>Users may interact with the data at their own pace and explore various facets of the pandemic's progress in a way that feels natural and educational due to this interaction.</p>
+                        
+                        <p>According to Hassenzahl and Tractinsky (2006), interactivity that is tailored to users' cognitive and emotional states improves user experience (UX) and makes the interaction more pleasurable and meaningful.</p>
+                        
+                        <p>Although the interaction increases user engagement, it also necessitates a certain amount of focus and attention from the user.</p>
+                        
+                        <p>To properly understand the narrative that is being presented, users must actively scroll and engage with the visualisations, which may be difficult for people who are unfamiliar with digital interfaces or who would prefer a more passive reading experience.</p>
+                        
+                        <p>This is consistent with studies that show how sophisticated visualisations can increase cognitive burden, which, if not handled appropriately, can cause user exhaustion or disengagement (Sweller, 1988).</p>
+                        
+                        <p><strong>User Demographics</strong></p>
+                        
+                        <p>An analysis of <strong>"How the Virus Won"'s</strong> effectiveness requires an understanding of its heterogeneous audience.</p>
+                        
+                        <p>User demographics can have a big impact on how they interact with data visualisations, including age, education level, and digital skills.</p>
+                        
+                        <p>While older users may prefer more straightforward, static presentations, younger users, who are more acclimated to digital and interactive media, may find the animations interesting and intuitive (Prensky, 2001).</p>
+                        
+                        <p>Incorporating engagement measures could yield insightful data.</p>
+                        
+                        <p>For example, a 2019 Pew Research Center survey revealed that 63% of younger consumers and 45% of older adults favour interactive material.</p>
+                        
+                        <p>Different levels of depth or interaction would be included in the article to appeal to different groups.</p>
+                        
+                        <p>Accessibility might be improved by creating simplified versions of the visualisations for people who are not as familiar with complex data.</p>
+                        
+                        <p>This would guarantee that the information is inclusive and reaches a wider audience.</p>
+                        
+                        <p><strong>UI/UX Design Principles and Evolution</strong></p>
+                        
+                        <p><strong>"How the Virus Won"</strong> features an elegant and user-focused UI/UX design.</p>
+                        
+                        <p>The visualisations are the main emphasis of the narrative due to the minimalist design, which emphasises clear typography, lots of white space, and clean lines.</p>
+                        
+                        <p>The colour scheme, which consists mostly of red, white, and black, has utilitarian significance in addition to being aesthetically pleasing.</p>
+                        
+                        <p>Black is used to depict the death toll animations and for most of the text, while blue represents the larger context of the pandemic's spread and networks between states.</p>
+                        
+                        <p>Red is strategically used to highlight important information, such as infection rates, outbreaks, and locations affected.</p>
+                        
+                        
+                        <figure>
+                            <img src="website images/web images/Figure 1.3 showing the Death Tolls represented as a cluster of black dots.png" alt="Figure 1.3 showing the Death Tolls represented as a cluster of black dots.png" class="essay-image">
+                            <figcaption>Figure 3: Showing the Death Tolls represented as a cluster of black dots (Source: The New York Times)</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="website images/web images/figure 1. 4 blue map.png" alt=" Figure 1.4 showing the map of the US with blue lines creating networks between multiple locations and specified areas." class="essay-image">
+                            <figcaption>Figure 4: Showing the map of the US with blue lines creating networks between multiple locations and specified areas. (Source: The New York Times)</figcaption>
+                        </figure>
+                        
+                        <p>The user can effortlessly navigate this content by using the responsive animations and seamless scrolling which guides the user through the narrative.</p>
+                        
+                        <p>Important UX concepts are followed in the design, including consistency, accessibility, and visual indicators for feedback.</p>
+                        
+                        <p>These components help create a seamless user experience in which the design enhances the information rather than detracts from it.</p>
+                        
+                        <p>Digital journalism's design has changed dramatically over the years, especially in response to consumer demands during the epidemic.</p>
+                        
+                        <p>While modern standards provide an emphasis on interactivity, engagement, and real-time data, previous designs frequently depended on static graphics and text.</p>
+                        
+                        <p>This change is a reflection of a growing awareness of the role that user experience (UX) plays in educating and engaging readers (Garcia, 2020).</p>
+                        
+                        <p><strong>Visual Hierarchy</strong></p>
+                        
+                        <p>The visual hierarchy of the article efficiently directs the reader's gaze while highlighting important details and the narrative's progression.</p>
+                        
+                        <p>A clear visual hierarchy is established through the strategic use of color and size.</p>
+                        
+                        <p>Red draws attention to important information, such as infection rates, and elements like maps, locations, afflicted individuals, and text boxes are sized to reflect their value.</p>
+                        
+                        <p>The hierarchy makes sure that readers can quickly and easily discover what they're looking for without feeling overwhelmed.</p>
+                        
+                        <p>Readability and comprehension are improved by the use of contrast, with high contrast parts for important information and lower contrast for supporting features (Lidwell et al., 2010).</p>
+                        
+                        <p><strong>Narrative Techniques and Psychological Effects</strong></p>
+                        
+                        <p>The storytelling strategies employed in <strong>"How the Virus Won"</strong> are intended to increase suspense and keep readers captivated.</p>
+                        
+                        <p>The way the epidemic progresses is portrayed to create tension through the use of cliffhangers and foreshadowing.</p>
+                        
+                        <p>In the beginning, the map, for example, shows 15 red beacons, each of which represents a COVID-19 case in a different location, such as Madison, Chicago, or San Antonio.</p>
+                        
+                        <p><strong>"The 15 within a couple of days is going to be down to close to zero,"</strong> President Trump remarked, according to the accompanying text box.</p>
+                        
+                        <p><strong>"The patients were kept apart. Their communications were watched. China was off limits to travel."</strong></p>
+                        
+                        <p>However, as you scroll down again, the map becomes closer to uncovering secret infections, and the animation of the virus bubbles grows larger in these areas.</p>
+                        
+                        <p>Subsequently, the text box changes to read, <strong>"None of that was successful. There was very little of the picture visible. Major cities were already experiencing a spread of almost 2,000 concealed diseases."</strong></p>
+                        
+                        <p>This change emphasises the virus's rapid spread despite early containment measures and gives the impression of urgency and inevitable outcome.</p>
+                        
+                        <p>This strategy is in line with psychological theories of narrative engagement, which contend that reader interest is sustained primarily through emotional appeal and suspense (Green & Brock, 2000).</p>
+
+                        <figure>
+                            <img src="website images/web images/Figures 1.5 .png" alt=" Figure 1.5 showing the reported 15 cases at the time of President Trumps report on the situation" class="essay-image">
+                            <figcaption>Figure 5: Showing the reported 15 cases at the time of President Trumps report on the situation. (Source: The New York Times)</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="website images/web images/Figures 1.6 .png" alt=" Figure 1.6 showing the aftermath of President Trump report on the situation" class="essay-image">
+                            <figcaption>Figure 6: Showing the aftermath of the Virus Spread after President Trump report on the situation. (Source: The New York Times)</figcaption>
+                        </figure>
+
+                        <p>Through adding testimonies and personal experiences, the piece humanises the data and strengthens its emotional bond with the reader.</p>
+                        
+                        <p>This method helps readers sympathise with those impacted by the pandemic by making the data more approachable.</p>
+                        
+                        <p>The combination of colour, movement, and interactivity heightens the emotional effect and can elicit feelings like dread, urgency, or empathy, which may influence the audience's perspective of the epidemic (Cialdini, 2009).</p>
+                        
+                        <figure>
+                            <img src="website images/web images/figure 1.7.png" alt=" Figure 1.7 showing the a testimony of a Woman becoming the first to be infected om
+                            Memphis" class="essay-image">
+                            <figcaption>Figure 7: Showing the a testimony of a Woman becoming the first to be infected in Memphis. (Source: The New York Times)</figcaption>
+                        </figure>
+                        
+                        <p><strong>Potential Drawbacks</strong></p>
+                        
+                        <p>Although the interactive design of <strong>"How the Virus Won"</strong> has many positive aspects, there may also be downsides to take into account.</p>
+                        
+                        <p>Overly complex animations may overwhelm or confuse users.</p>
+                        
+                        <p>When designing interactive visualisations, it is crucial to strike a balance between engagement and usability, ensuring that users can easily navigate and comprehend the data presented (Lee et al., 2016).</p>
+                        
+                        <p>Additionally, there is the potential for bias in the visual representations, especially when the selected colours and scales evoke strong emotional reactions.</p>
+                        
+                        <p>Different cultural interpretations of colour can cause misunderstandings; for instance, red can signify urgency in some cultures but danger in others.</p>
+                        
+                        <p>To make sure the information is communicated fairly and accurately, designers must carefully choose visual elements.</p>
+                        
+                        <p><strong>Conclusion</strong></p>
+                        
+                        <p>The data journalism piece <strong>"How the Virus Won"</strong> provides a compelling study of the effectiveness of data visualisation techniques in conveying complex information about the COVID-19 pandemic.</p>
+                        
+                        <p>Through engaging visual storytelling, interactivity, and a well-considered UI/UX design, the piece not only informs but also immerses readers in the narrative.</p>
+                        
+                        <p>However, it is important to be mindful of potential drawbacks, including cognitive overload and bias, when employing such powerful visual techniques.</p>
+                        
+                        <p>Ultimately, the article serves as a powerful reminder of the role that thoughtful design plays in shaping our understanding of critical global issues.</p>
+                        
+
+                        <p><strong>References</strong></p>
+
+                        <ul>
+                            <li>Cialdini, R. B. (2009). <em>Influence: Science and Practice</em>. 5th ed. Boston: Pearson.</li>
+                            <li>Garcia, M. (2020). ‘The Evolution of Digital Journalism During the COVID-19 Pandemic’. <em>Journalism Practice</em>, 14(10), pp. 1231-1245.</li>
+                            <li>Green, M. C. and Brock, T. C. (2000). ‘The role of transportation in the persuasiveness of public narratives’. <em>Journal of Personality and Social Psychology</em>, 79(5), pp. 701–721.</li>
+                            <li>Hassenzahl, M. and Tractinsky, N. (2006). ‘User experience– a research agenda’. <em>Behaviour & Information Technology</em>.</li>
+                            <li>Watkins, D., Holder, J., Glanz, J., Cai, W., Carey, B. and White, J. (2020). How the Virus Won. The New York Times. Available at: <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-spread.html">https://www.nytimes.com/interactive/2020/us/coronavirus-spread.html</a> [Accessed 2 September 2024]</li>
+                        </ul>
+
+                    </div>
+                    <div class="essay-buttons">
+                        <button class="essay-button read-more" onclick="toggleFullText(this)">Read More</button>
+                        <button class="essay-button open-essay" data-pdf="writtendocuments/Critical Analysis of Data Visualization in _How the Virus Won_ (1).pdf">Preview</button>
+                        <a href="writtendocuments/Critical Analysis of Data Visualization in _How the Virus Won_ (1).pdf" class="essay-button download" target="_blank">Download</a>
+                    </div>
+                </div>
+            
+                <div class="essay-card">
+                    <h3>Title of Another Essay</h3>
+                    <p class="preview-text">
+                        Preview text for the second essay...
+                    </p>
+                    <div class="full-text" style="display: none;">
+                        <p>The full text of the second essay goes here...</p>
+                    </div>
+                    <div class="essay-buttons">
+                        <button class="essay-button read-more" onclick="toggleFullText(this)">Read More</button>
+                        <button class="essay-button open-essay" data-pdf="writtendocuments/Another_Essay.pdf">Preview</button>
+                        <a href="writtendocuments/Another_Essay.pdf" class="essay-button download" target="_blank">Download</a>
+                    </div>
+                </div>
+            
+                <div class="essay-card">
+                    <h3>Title of Third Essay</h3>
+                    <p class="preview-text">
+                        Preview text for the third essay...
+                    </p>
+                    <div class="full-text" style="display: none;">
+                        <p>The full text of the third essay goes here...</p>
+                    </div>
+                    <div class="essay-buttons">
+                        <button class="essay-button read-more" onclick="toggleFullText(this)">Read More</button>
+                        <button class="essay-button open-essay" data-pdf="writtendocuments/Third_Essay.pdf">Preview</button>
+                        <a href="writtendocuments/Third_Essay.pdf" class="essay-button download" target="_blank">Download</a>
+                    </div>
+                </div>
             </div>
-               
+            
+            <!-- PDF Modal -->
+            <div id="pdfModal" class="pdf-modal">
+                <div class="modal-content">
+                    <button class="close-pdf">X</button>
+                    <iframe id="pdfViewer" src=""></iframe>
+                </div>
             </div>
-        </div>
+            
+            
+
     </main>
     <!--==================== FOOTER ====================-->
     <script src="assets/js/footer.js"></script>

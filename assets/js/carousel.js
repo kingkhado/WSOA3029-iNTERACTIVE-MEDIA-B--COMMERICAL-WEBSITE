@@ -1,42 +1,49 @@
-let nextButton = document.getElementById('next');
-let prevButton = document.getElementById('prev');
-let carousel = document.querySelector('.carousel');
-let listHTML = document.querySelector('.carousel .list');
-let seeMoreButtons = document.querySelectorAll('.seeMore');
-let backButton = document.getElementById('back');
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
+const carousel = document.querySelector('.carousel');
+const listHTML = document.querySelector('.carousel .list');
+const seeMoreButtons = document.querySelectorAll('.seeMore');
+const backButton = document.getElementById('back');
 
-nextButton.onclick = function(){
+let unAcceptClick; // Corrected spelling
+
+nextButton.onclick = function() {
     showSlider('next');
 }
-prevButton.onclick = function(){
+
+prevButton.onclick = function() {
     showSlider('prev');
 }
-let unAcceppClick;
-const showSlider = (type) => {
+
+const showSlider = (direction) => { // Use a consistent naming convention
     nextButton.style.pointerEvents = 'none';
     prevButton.style.pointerEvents = 'none';
 
     carousel.classList.remove('next', 'prev');
-    let items = document.querySelectorAll('.carousel .list .item');
-    if(type === 'next'){
+    const items = document.querySelectorAll('.carousel .list .item');
+
+    if (direction === 'next') {
         listHTML.appendChild(items[0]);
         carousel.classList.add('next');
-    }else{
+    } else {
         listHTML.prepend(items[items.length - 1]);
         carousel.classList.add('prev');
     }
-    clearTimeout(unAcceppClick);
-    unAcceppClick = setTimeout(()=>{
+
+    clearTimeout(unAcceptClick); // Clear timeout if it exists
+    unAcceptClick = setTimeout(() => {
         nextButton.style.pointerEvents = 'auto';
         prevButton.style.pointerEvents = 'auto';
-    }, 2000)
+    }, 2000);
 }
+
 seeMoreButtons.forEach((button) => {
-    button.onclick = function(){
+    button.onclick = function() {
         carousel.classList.remove('next', 'prev');
         carousel.classList.add('showDetail');
     }
 });
-backButton.onclick = function(){
+
+backButton.onclick = function() {
     carousel.classList.remove('showDetail');
 }

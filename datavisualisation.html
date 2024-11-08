@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive website focused on providing resources and support for homelessness. Learn more about our mission and how you can help.">
-    <meta name="keywords" content="homelessness, support, resources, community, charity">
-    <meta name="author" content="Makhado Khashane">
-    <title>Responsive Bible Verses Node-Edge Visualization</title>
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
-    <!--=============== CSS ===============-->
- 
-    <link rel="stylesheet" href="assets/css/node-edge.css">
- 
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore a unique node-edge visualization of Bible verses focused on themes of charity and compassion. Discover connections and insights through interactive visuals.">
+        <meta name="keywords" content="Bible verses, node-edge visualization, interactive, charity, compassion, data visualization, responsive design">
+        <meta name="author" content="Makhado Khashane">
+    
+        <title>Responsive Bible Verses Node-Edge Visualization</title>
+    
+        <!-- Open Graph Meta Tags for Social Media Sharing -->
+        <meta property="og:title" content="Bible Verses Node-Edge Visualization">
+        <meta property="og:description" content="Dive into an interactive visualization of Bible verses on charity and compassion. Uncover meaningful connections in this responsive experience.">
+        <meta property="og:image" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/assets/images/bible-visualization-share.jpg">
+        <meta property="og:url" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/visualization-url">
+        <meta property="og:type" content="website">
+    
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/visualization-url">
+    
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/node-edge.css">
+    </head>
+    
 <body>
     
+    <!--==================== PROGRESS BAR ====================-->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div> <!-- Filled part of the progress bar -->
+    </div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -40,8 +56,10 @@
     <main class="main">
   <!--==================== HOME ====================-->
      
+    <!-- visualization Section -->
+        <section class="d3vziualization section" id="vizual">
         <div class="home__container container grid">
-            <h1>Node-Edge Visualization of GIVING Bible Verses</h1>
+            <h2>Node-Edge Visualization of DONATION Bible Verses</h2>
             <p>Click on a node to view the corresponding Bible verse about giving. Observe how the verses are connected to emphasize the importance of helping the poor.</p>
             <div id="graphContainer">
                 <svg id="graph" width="800" height="600"></svg>

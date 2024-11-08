@@ -1,215 +1,177 @@
 const donations = [
-    {
-      "id": 1,
-      "name": "FREE BOOKS",
-      "price": 0,
-      "image": "website images/Book.png"
-    },
-    {
-      "id": 2,
-      "name": "CLOTHING",
-      "price": 0,
-      "image": "website images/clothes.stacked1.png"
-    },
-    {
-      "id": 3,
-      "name": "FOOD",
-      "price": 100,
-      "image": "website images/FOODMEAL.png"
-    },
-    {
-      "id": 4,
-      "name": "WATER",
-      "price": 50,
-      "image": "website images/waterbottle.png"
-    },
-    {
-      "id": 5,
-      "name": "SHELTER FARE",
-      "price": 100,
-      "image": "website images/SHELTERMAIN.png"
-    }
-  ];
-
-  let listDonationHTML = document.querySelector('.listDonation');
-  let listCartHTML = document.querySelector('.listCart');
-  let iconCart = document.querySelector('.icon-cart');
-  let iconCartSpan = document.querySelector('.icon-cart span');
-  let body = document.querySelector('body');
-  let closeCart = document.querySelector('.close');
-  
-  let cart = [];
-  
-  iconCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-  })
-  closeCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-  })
-
-  const addDataToHTML = () => {
-    // remove datas default from HTML
-  
-    // add new datas
-    if (donations.length > 0) // if has data
-    {
-      donations.forEach(donation => {
-        let newDonation = document.createElement('div');
-        newDonation.dataset.id = donation.id;
-        newDonation.classList.add('item');
-        newDonation.innerHTML = `
-          <img src="${donation.image}" alt="">
-          <h2>${donation.name}</h2>
-          <div class="price">R${donation.price}</div>
-          <button class="addCart">Add To Cart</button>`;
-        listDonationHTML.appendChild(newDonation);
-      });
-    }
+  {
+    id: 1,
+    name: "FREE BOOKS",
+    price: 0,
+    image: "website images/books.png"
+  },
+  {
+    id: 2,
+    name: "CLOTHING",
+    price: 0,
+    image: "website images/clothing icon-homeless.png"
+  },
+  {
+    id: 3,
+    name: "FOOD",
+    price: 100,
+    image: "website images/food icon-homeless.webp"
+  },
+  {
+    id: 4,
+    name: "WATER",
+    price: 50,
+    image: "website images/water.png"
+  },
+  {
+    id: 5,
+    name: "SHELTER FARE",
+    price: 100,
+    image: "website images/shelter icon-homeless.png"
   }
+];
 
+const listDonationHTML = document.querySelector('.listDonation');
+const listCartHTML = document.querySelector('.listCart');
+const iconCart = document.querySelector('.icon-cart');
+const iconCartSpan = document.querySelector('.icon-cart span');
+const body = document.querySelector('body');
+const closeCart = document.querySelector('.close');
 
-    listDonationHTML.addEventListener('click', (event) => {
-        let positionClick = event.target;
-        if(positionClick.classList.contains('addCart')){
-            let id_donation = positionClick.parentElement.dataset.id;
-            addToCart(id_donation);
-        }
-    })
+let cart = [];
 
-    const addToCart = (donation_id) => {
-  let positionThisDonationInCart = cart.findIndex((value) => value.id == donation_id); // Changed to id
-  if (cart.length <= 0) {
-    cart = [{
-      id: donation_id, // Changed to id
-      quantity: 1
-    }];
-  } else if (positionThisDonationInCart < 0) {
-    cart.push({
-      id: donation_id,
-      quantity: 1
-    });
+iconCart.addEventListener('click', () => {
+  body.classList.toggle('showCart');
+});
+
+closeCart.addEventListener('click', () => {
+  body.classList.toggle('showCart');
+});
+
+const addDataToHTML = () => {
+  // Clear existing donations
+  listDonationHTML.innerHTML = '';
+
+  // Populate donation items
+  donations.forEach(({ id, name, price, image }) => {
+    const newDonation = document.createElement('div');
+    newDonation.dataset.id = id;
+    newDonation.classList.add('item');
+    newDonation.innerHTML = `
+      <img src="${image}" alt="">
+      <h2>${name}</h2>
+      <div class="price">R${price}</div>
+      <button class="addCart">Add To Cart</button>`;
+    listDonationHTML.appendChild(newDonation);
+  });
+};
+
+listDonationHTML.addEventListener('click', (event) => {
+  const positionClick = event.target;
+  if (positionClick.classList.contains('addCart')) {
+    const idDonation = positionClick.parentElement.dataset.id;
+    addToCart(idDonation);
+  }
+});
+
+const addToCart = (donationId) => {
+  const positionInCart = cart.findIndex(item => item.id == donationId);
+  
+  if (positionInCart < 0) {
+    cart.push({ id: donationId, quantity: 1 });
   } else {
-    cart[positionThisDonationInCart].quantity = cart[positionThisDonationInCart].quantity + 1;
+    cart[positionInCart].quantity += 1;
   }
+  
   addCartToHTML();
   addCartToMemory();
-}
+};
 
 const addCartToMemory = () => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
-  
-  const addCartToHTML = () => {
-    listCartHTML.innerHTML = '';
-    let totalQuantity = 0;
-    if (cart.length > 0) {
-      cart.forEach(item => {
-        totalQuantity = totalQuantity + item.quantity;
-        let newItem = document.createElement('div');
+  localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+const addCartToHTML = () => {
+  listCartHTML.innerHTML = '';
+  let totalQuantity = 0;
+
+  if (cart.length > 0) {
+    cart.forEach(item => {
+      totalQuantity += item.quantity;
+      const positionDonation = donations.find(donation => donation.id == item.id);
+
+      if (positionDonation) {
+        const { image, name, price } = positionDonation;
+        const newItem = document.createElement('div');
         newItem.classList.add('item');
         newItem.dataset.id = item.id;
-  
-        let positionDonation = donations.findIndex((value) => value.id == item.id);
-        if (positionDonation >= 0) { // Check if the donation is found
-          let info = donations[positionDonation];
-          listCartHTML.appendChild(newItem);
-          newItem.innerHTML = `
-            <div class="image">
-              <img src="${info.image}">
-            </div>
-            <div class="name">
-              ${info.name}
-            </div>
-            <div class="totalPrice">R${info.price * item.quantity}</div>
-            <div class="quantity">
-              <span class="minus"><</span>
-              <span>${item.quantity}</span>
-              <span class="plus">></span>
-            </div>
-          `;
-        }
-      })
-   
-} else {
+        newItem.innerHTML = `
+          <div class="image"><img src="${image}"></div>
+          <div class="name">${name}</div>
+          <div class="totalPrice">R${price * item.quantity}</div>
+          <div class="quantity">
+            <span class="minus"><</span>
+            <span>${item.quantity}</span>
+            <span class="plus">></span>
+          </div>`;
+        listCartHTML.appendChild(newItem);
+      }
+    });
+  } else {
     listCartHTML.innerHTML = '<p>Cart is empty</p>';
   }
+
   iconCartSpan.innerText = totalQuantity;
-}
-
-
+};
 
 listCartHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
-        let donation_id = positionClick.parentElement.parentElement.dataset.id;
-        let type = 'minus';
-        if(positionClick.classList.contains('plus')){
-            type = 'plus';
-        }
-        changeQuantityCart(donation_id, type);
-    }
-})
+  const positionClick = event.target;
+  if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
+    const donationId = positionClick.parentElement.parentElement.dataset.id;
+    const actionType = positionClick.classList.contains('plus') ? 'plus' : 'minus';
+    changeQuantityCart(donationId, actionType);
+  }
+});
 
-const changeQuantityCart = (donation_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.id == donation_id);
-    if (positionItemInCart >= 0) {
-      let info = cart[positionItemInCart];
-      switch (type) {
-        case 'plus':
-          cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
-          break;
+const changeQuantityCart = (donationId, actionType) => {
+  const positionItemInCart = cart.findIndex(item => item.id == donationId);
   
-        default:
-          if (cart[positionItemInCart].quantity === 1) {
-            cart.splice(positionItemInCart, 1);
-            if (cart.length === 0) {
-              localStorage.removeItem('cart');
-            } else {
-              addCartToMemory();
-            }
-          } else {
-            cart[positionItemInCart].quantity = cart[positionItemInCart].quantity - 1;
-            addCartToMemory();
-          }
-          break;
+  if (positionItemInCart >= 0) {
+    if (actionType === 'plus') {
+      cart[positionItemInCart].quantity += 1;
+    } else {
+      if (cart[positionItemInCart].quantity === 1) {
+        cart.splice(positionItemInCart, 1);
+      } else {
+        cart[positionItemInCart].quantity -= 1;
       }
     }
+
+    addCartToMemory();
     addCartToHTML();
   }
+};
+
+const initApp = () => {
+  addDataToHTML();
   
-  /*
-  listDonationHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if (positionClick.classList.contains('addCart')) {
-      let id_donation = positionClick.parentElement.dataset.id;
-      addToCart(id_donation);
-    }
-  }) */
-  
-    const initApp = () => {
-        addDataToHTML();
-      
-        // get data cart from memory
-        if (localStorage.getItem('cart')) {
-          cart = JSON.parse(localStorage.getItem('cart'));
-          addCartToHTML();
-        } else {
-          cart = [];
-        }
-      }
+  const savedCart = localStorage.getItem('cart');
+  cart = savedCart ? JSON.parse(savedCart) : [];
+  addCartToHTML();
+};
 
 initApp();
 
 const checkoutButton = document.querySelector('.checkOut');
 
 checkoutButton.addEventListener('click', () => {
-  // Clear the cart
+  // Clear the cart and update UI
   cart = [];
   addCartToMemory();
   addCartToHTML();
-  // Change the color of the checkout button to green
+  
+  // Change button color temporarily for feedback
   checkoutButton.style.backgroundColor = 'green';
-  // Add a timeout to change the color back to normal after 2 seconds
   setTimeout(() => {
     checkoutButton.style.backgroundColor = '';
   }, 2000);

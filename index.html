@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive website focused on providing resources and support for homelessness. Learn more about our mission and how you can help.">
-    <meta name="keywords" content="homelessness, support, resources, community, charity">
-    <meta name="author" content="Makhado Khashane">
-
-     
-
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Explore resources, support, and community efforts addressing homelessness. Join our mission to make a difference.">
+      <meta name="keywords" content="homelessness, resources, support, community, charity, mission, help">
+      <meta name="author" content="Makhado Khashane">     
+  
+      <title>Home | Resources and Support for Homelessness</title>
+      
+      <!-- Open Graph Meta Tags for Social Media Sharing -->
+      <meta property="og:title" content="Home | Resources and Support for Homelessness">
+      <meta property="og:description" content="Explore resources and support addressing homelessness. Discover ways you can contribute to our mission.">
+      <meta property="og:image" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/assets/images/share-image.jpg">
+      <meta property="og:url" content="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/index.html">
+      <meta property="og:type" content="website">
+  
+      <!-- Canonical URL -->
+      <link rel="canonical" href="https://kingkhado.github.io/WSOA3029-iNTERACTIVE-MEDIA-B--COMMERICAL-WEBSITE/index.html">
+  
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css">
-
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
-
-      <title>Responsive  website </title>
-   </head>
+      <link rel="stylesheet" href="assets/css/contact.css">
+  </head>
+  
    <body>
+
+      <!--==================== PROGRESS BAR ====================-->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div> <!-- Filled part of the progress bar -->
+  </div>
+
     <!--==================== HEADER ====================-->
 <header class="header" id="header">
   <nav class="nav container">
@@ -26,7 +41,7 @@
     
       <header>
          <div class="header-logo-text">
-           <img src="website images/icon-homeless.png" alt="Logo">
+           <img src="website images/icon-homeless.png" alt="Homeless Organisation Logo">
          </div>
        </header>
 
@@ -60,12 +75,12 @@
          
       </header>
 
-       <!--==================== MAIN ====================-->
+           <!--==================== MAIN ====================-->
     <main class="main">
       <!--==================== HOME ====================-->
       <section class="home section" id="home">
           <div class="home__container container grid">
-              <img src="website images/Homeless sibling-homeless .jpg" alt="image" class="home__img">
+              <img src="website images/Homeless sibling-homeless .jpg" alt="Homeless Children Home Imgage" class="home__img">
 
               <div class="home__data">
                   <h1 class="home__title">
@@ -101,7 +116,7 @@
    <div class="about__container container grid">
       <p class="about__description"> As a Christ-believing homeless organization, we are dedicated to serving those in need and spreading the love of God. Our mission is to provide food, shelter, and clothing to the homeless, while also sharing the message of hope and redemption through Jesus Christ. We believe that every individual is created in the image of God and deserves to be treated with dignity and respect. Through our programs and services, we have seen countless lives transformed, and we are committed to continuing our work to make a positive impact in the lives of those we serve. </p>
  
-     <img src="website images/icon-homeless.png" alt="image" class="about__img">
+     <img src="website images/icon-homeless.png" alt="Homeless Organisation Logo" class="about__img">
    </div>
  
    <div class="statistics">
@@ -143,17 +158,17 @@
 
                <div class="new__content grid">
                   <article class="new__card">
-                     <img src="website images/homeless lady with child-homeless.png" alt="image" class="new__img">
+                     <img src="website images/homeless lady with child-homeless.png" alt="homeless lady with child-homeless image" class="new__img">
                      <h2 class="new__title">END BROKEN HOMES</h2>
                   </article>
 
                   <article class="new__card">
-                     <img src="website images/starving person-homeless .png" alt="image" class="new__img">
+                     <img src="website images/starving person-homeless .png" alt="starving person-homeless image" class="new__img">
                      <h2 class="new__title">END HUNGER IN SA</h2>
                   </article>
 
                   <article class="new__card">
-                     <img src="website images/starving icon-homeless .png" alt="image" class="new__img">
+                     <img src="website images/starving icon-homeless .png" alt="starving icon-homeless image" class="new__img">
                      <h2 class="new__title">END STARVATION </h2>
                   </article>
                </div>
@@ -169,9 +184,9 @@
 
             <div class="shop__container container grid">
                <article class="shop__card">
-                  <img src="website images/clothing icon-homeless.png" alt="image" class="shop__img">
+                  <img src="website images/clothing icon-homeless.png" alt="clothing icon-homeless image" class="shop__img">
 
-                  <h3 class="shop__title">PROVIDE CLOTHING <br> </h3>
+                  <h3 class="shop__title"> CLOTHING <br> </h3>
                   <span class="shop__price"></span>
 
                   <a href="donation.html" class="shop__button redirect-to-donation">
@@ -180,31 +195,9 @@
                </article>
 
                <article class="shop__card">
-                  <img src="website images/shelter icon-homeless.png" alt="image" class="shop__img">
+                  <img src="website images/shelter icon-homeless.png" alt="shelter icon-homeless image" class="shop__img">
 
-                  <h3 class="shop__title">PROVIDE SHELTER FARE <br> </h3>
-                  <span class="shop__price">R100</span>
-
-                  <a href="donation.html" class="shop__button redirect-to-donation">
-                     <i class="ri-shopping-bag-line"></i>
-                   </a>
-               </article>
-
-               <article class="shop__card">
-                  <img src="website images/food icon-homeless.webp" alt="image" class="shop__img">
-
-                  <h3 class="shop__title">PROVIDE MEALS <br> </h3>
-                  <span class="shop__price">R100</span>
-
-                  <a href="donation.html" class="shop__button redirect-to-donation">
-                     <i class="ri-shopping-bag-line"></i>
-                   </a>
-               </article>
-
-               <article class="shop__card">
-                  <img src="website images/books.png" alt="image" class="shop__img">
-
-                  <h3 class="shop__title">PROVIDE EDUCATIONAL BOOKS <br> </h3>
+                  <h3 class="shop__title"> SHELTER <br> </h3>
                   <span class="shop__price"></span>
 
                   <a href="donation.html" class="shop__button redirect-to-donation">
@@ -213,10 +206,32 @@
                </article>
 
                <article class="shop__card">
-                  <img src="website images/water.png" alt="image" class="shop__img">
+                  <img src="website images/food icon-homeless.webp" alt="food icon-homelessimage" class="shop__img">
 
-                  <h3 class="shop__title">PROVIDE WATER <br> </h3>
-                  <span class="shop__price">R50</span>
+                  <h3 class="shop__title"> MEALS <br> </h3>
+                  <span class="shop__price"></span>
+
+                  <a href="donation.html" class="shop__button redirect-to-donation">
+                     <i class="ri-shopping-bag-line"></i>
+                   </a>
+               </article>
+
+               <article class="shop__card">
+                  <img src="website images/books.png" alt="books image" class="shop__img">
+
+                  <h3 class="shop__title"> FREE BOOKS <br> </h3>
+                  <span class="shop__price"></span>
+
+                  <a href="donation.html" class="shop__button redirect-to-donation">
+                     <i class="ri-shopping-bag-line"></i>
+                   </a>
+               </article>
+
+               <article class="shop__card">
+                  <img src="website images/water.png" alt="water image" class="shop__img">
+
+                  <h3 class="shop__title"> WATER <br> </h3>
+                  <span class="shop__price"></span>
 
                   <a href="donation.html" class="shop__button redirect-to-donation">
                      <i class="ri-shopping-bag-line"></i>
@@ -236,7 +251,7 @@
             </h2>
 
             <div class="care__container container grid">
-               <img src="website images/hope-homeless .jpg" alt="image" class="care__img">
+               <img src="website images/hope-homeless .jpg" alt="hope banner-homeless" class="care__img">
 
                <ul class="care__list">
                   <li class="care__item">
@@ -267,36 +282,57 @@
             </div>
          </section>
 
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            <h2 class="section__title">
-               ADD SMILES TO THE WORLD <br> CONTACT US
-            </h2>
+        <!--==================== CONTACT ====================-->
+<section class="contact section" id="contact">
+   <h2 class="section__title">
+       ADD SMILES TO THE WORLD <br> CONTACT US
+   </h2>
 
-            <div class="contact__container container grid">
-               <img src="website images/BRAAMFONTEIN MAP.PNG" alt="image" class="contact__img">
+   <div class="contact__container container grid">
+       <!-- Live Map Section -->
+       <div class="contact__map">
+           <h3>Find us here:</h3>
+           <iframe 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.522799282418!2d28.03491738238471!3d-26.195246585166615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebcf5e300c5a41b%3A0x9b76af9f3ae9f4d5!2sWits%20University!5e0!3m2!1sen!2sza!4v1633282245674!5m2!1sen!2sza" 
+               width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+           <p>Wits University, Johannesburg</p>
+       </div>
 
-               
-                  <div>
-                     <h3 class="contact__title">Call us </h3>
+       <!-- Contact Form Section -->
+       <div id="contactPage">
+          
+           <form id="contactForm">
+               <label for="name">Name:</label>
+               <input type="text" id="name" name="name" required>
+               <span id="nameError" class="error" style="color: red;"></span>
+   
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required>
+               <span id="emailError" class="error" style="color: red;"></span>
+   
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" required>
+               <span id="passwordError" class="error" style="color: red;"></span>
+   
+               <label for="phone">Phone:</label>
+               <input type="text" id="phone" name="phone" required>
+               <span id="phoneError" class="error" style="color: red;"></span>
+   
+               <label for="message">Message:</label>
+               <textarea id="message" name="message" maxlength="250" required></textarea>
+               <span id="messageError" class="error" style="color: red;"></span>
+   
+               <button type="submit">Submit</button>
+           </form>
+           <!-- Success Message -->
+           <div id="successMessage" style="display: none;">
+               <p style="color: rgb(252, 252, 252);">Thank you for your message! We'll get back to you soon.</p>
+           </div>
+       </div>
+   </div>
+</section>
 
-                     <address class="contact__info">
-                        073 067 2639 <br>
-                        011 432 5409
-                     </address>
-                  </div>
 
-                  <div>
-                     <h3 class="contact__title">Find us here</h3>
-
-                     <address class="contact__info">
-                        1 Jan Smuts Avenue Braamfontein <br>
-                        Johannesburg
-                     </address>
-                  </div>
-               </div>
-            </div>
-         </section>
       </main>
 
       <!--==================== FOOTER ====================-->
@@ -315,6 +351,12 @@
 
       <!--=============== STATS JS ===============-->
       <script  defer src="assets/js/stats.js"></script>
+
+         <!--=============== contact JS ===============-->
+         <script  defer src="assets/js/contact.js"></script>
+
+     
+
 
 
    </body>

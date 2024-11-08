@@ -17,7 +17,7 @@ async function fetchVerses() {
 
 // Function to shorten verses
 function shortenVerse(fullText) {
-    const sentences = fullText.split('.').map(s => s.trim());
+    const sentences = fullText.split('.').map(sentence => sentence.trim());
     // Return the first two sentences, or the full text if it's shorter
     return sentences.length > 2 ? sentences.slice(0, 2).join('. ') + '.' : fullText;
 }
@@ -47,7 +47,7 @@ fetchVerses().then(nodes => {
     );
 
     // Create link elements
-    const link = svg.append("g")
+    const linkElements = svg.append("g")
         .attr("class", "links")
         .selectAll("line")
         .data(combinedLinks)
@@ -55,7 +55,7 @@ fetchVerses().then(nodes => {
         .attr("class", "link");
 
     // Create node elements
-    const node = svg.append("g")
+    const nodeElements = svg.append("g")
         .attr("class", "nodes")
         .selectAll("circle")
         .data(nodes)
@@ -64,23 +64,23 @@ fetchVerses().then(nodes => {
         .attr("r", 8)
         .attr("fill", "#69b3a2")
         .call(d3.drag()
-            .on("start", dragstarted)
+            .on("start", dragStarted)
             .on("drag", dragged)
-            .on("end", dragended))
+            .on("end", dragEnded))
         .on("mouseover", mouseoverNode)
         .on("mouseout", mouseoutNode)
         .on("click", clickNode);
 
     // Add labels to nodes
-    const label = svg.append("g")
-    .attr("class", "labels")
-    .selectAll("text")
-    .data(nodes)
-    .enter().append("text")
-    .attr("dy", -3)
-    .attr("dx", 10)
-    .attr("fill", "#ffffff") // Add this line to change the text color to white
-    .text(d => d.id);
+    const labelElements = svg.append("g")
+        .attr("class", "labels")
+        .selectAll("text")
+        .data(nodes)
+        .enter().append("text")
+        .attr("dy", -3)
+        .attr("dx", 10)
+        .attr("fill", "#ffffff") // Change the text color to white
+        .text(d => d.id);
 
     simulation
         .nodes(nodes)
@@ -90,17 +90,17 @@ fetchVerses().then(nodes => {
 
     // Update positions on tick
     function ticked() {
-        link
+        linkElements
             .attr("x1", d => d.source.x)
             .attr("y1", d => d.source.y)
             .attr("x2", d => d.target.x)
             .attr("y2", d => d.target.y);
 
-        node
+        nodeElements
             .attr("cx", d => d.x)
             .attr("cy", d => d.y);
 
-        label
+        labelElements
             .attr("x", d => d.x)
             .attr("y", d => d.y);
     }
@@ -110,11 +110,11 @@ fetchVerses().then(nodes => {
         // Highlight connected nodes and edges
         const connectedLinks = combinedLinks.filter(link => link.source === d.id || link.target === d.id);
         
-        link
+        linkElements
             .style("stroke", l => connectedLinks.includes(l) ? "orange" : "#ccc")
             .style("stroke-width", l => connectedLinks.includes(l) ? 3 : 1.5);
         
-        node
+        nodeElements
             .style("fill", n => n.id === d.id || connectedLinks.some(link => link.source === n.id || link.target === n.id) ? "orange" : "#69b3a2");
 
         tooltip
@@ -126,8 +126,8 @@ fetchVerses().then(nodes => {
 
     function mouseoutNode() {
         // Reset styles on mouse out
-        link.style("stroke", "#ccc").style("stroke-width", 1.5);
-        node.style("fill", "#69b3a2");
+        linkElements.style("stroke", "#ccc").style("stroke-width", 1.5);
+        nodeElements.style("fill", "#69b3a2");
         tooltip.style("opacity", 0); // Use opacity to hide tooltip
     }
 
@@ -162,7 +162,7 @@ fetchVerses().then(nodes => {
     }
 
     // Drag functions
-    function dragstarted(event, d) {
+    function dragStarted(event, d) {
         if (!event.active) simulation.alphaTarget(0.3).restart();
         d.fx = d.x;
         d.fy = d.y;
@@ -173,7 +173,7 @@ fetchVerses().then(nodes => {
         d.fy = event.y;
     }
 
-    function dragended(event, d) {
+    function dragEnded(event, d) {
         if (!event.active) simulation.alphaTarget(0);
         d.fx = null;
         d.fy = null;
