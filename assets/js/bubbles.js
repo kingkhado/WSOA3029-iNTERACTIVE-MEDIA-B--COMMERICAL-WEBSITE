@@ -1,4 +1,4 @@
-// Fetch the data from the API
+// Fetch and process the data, then pass it directly to the chart creation function
 fetch('https://apps.itos.uga.edu/CODV2API/api/v1/themes/cod-ps/lookup/Get/1/do/ZAF')
   .then(response => response.json())
   .then(data => {
@@ -8,9 +8,11 @@ fetch('https://apps.itos.uga.edu/CODV2API/api/v1/themes/cod-ps/lookup/Get/1/do/Z
       homelessPopulation: province.T_TL * 0.0033
     }));
 
+    // Create the bubble chart with the data
     createBubbleChart(provinces);
   })
   .catch(error => console.error('Error fetching the data:', error));
+
 
 function createBubbleChart(provinces) {
     const width = 800;
@@ -45,22 +47,28 @@ function createBubbleChart(provinces) {
                          .force('collide', d3.forceCollide(d => radiusScale(d.population) + 2));
 
     // Add circles for each province
-    const bubbles = svg.selectAll('.bubble')
-                       .data(provinces)
-                       .enter()
-                       .append('circle')
-                       .attr('class', 'bubble')
-                       .attr('r', d => radiusScale(d.population))
-                       .attr('fill', (d, i) => color(i))  // Apply shades of blue
-                       .attr('stroke', 'black')
-                       .attr('stroke-width', 1)
-                       .on('mouseover', function(event, d) {
-                            tooltip.style('opacity', 1)
-                                   .html(`Province: ${d.name}<br>Population: ${d.population}<br>Homeless: ${Math.round(d.homelessPopulation)}`)
-                                   .style('left', (event.pageX + 5) + 'px')
-                                   .style('top', (event.pageY - 28) + 'px');
-                        })
-                       .on('mouseout', () => tooltip.style('opacity', 0));
+const bubbles = svg.selectAll('.bubble')
+.data(provinces)
+.enter()
+.append('circle')
+.attr('class', 'bubble')
+.attr('r', d => radiusScale(d.population))
+.attr('fill', (d, i) => color(i))  // Apply shades of blue
+.attr('stroke', 'black')
+.attr('stroke-width', 1)
+.on('mouseover', function(event, d) {
+  tooltip.style('opacity', 1)
+         .html(`Province: ${d.name}<br>Population: ${d.population}<br>Homeless: ${Math.round(d.homelessPopulation)}`)
+         .style('left', (event.pageX + 5) + 'px')
+         .style('top', (event.pageY - 28) + 'px');
+})
+.on('mouseout', () => tooltip.style('opacity', 0));
+
+// Trigger the force simulation to run as soon as the data is loaded
+simulation.nodes(provinces).on('tick', () => {
+bubbles.attr('cx', d => d.x)
+       .attr('cy', d => d.y);
+});
 
     // Update bubble positions based on force simulation
     simulation.nodes(provinces).on('tick', () => {
